@@ -2,10 +2,14 @@
     box-sizing: border-box;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+html{
+    overflow-y: auto;
+    overflow-x: hidden;
+}
 
 
 #cover {
-    background-image: linear-gradient(to right, rgba(75, 160, 72, 0.7), rgba(0, 51, 0, 0)), url("../images/bridges.png");
+    background-image: linear-gradient(to right, rgba(76, 149, 101, 0.7), rgba(0, 51, 0, 0)), url("../images/bridges.png");
     min-height: 300px;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -15,9 +19,9 @@
 
 /*Instructions*/
 
-#directInstructions, #diagonalInstructions{
+#directinstructions, #diagonalinstructions{
     display: inline-block;
-    background-color: rgba(75, 160, 72, 0.7);
+    background-color: rgba(76, 149, 101, 0.7);
     padding: 2vw;
     margin: 0px 3vw;
     margin-right: 3vw;
@@ -28,12 +32,12 @@
     
 }
 .num{
-    background-color: rgb(206, 59, 59);
+    background-color: rgb(160, 68, 68);
     padding: 0.8vw;
 }
 
-.tipLine{
-    background-color: rgb(238, 176, 4);
+.tipline{
+    background-color: rgb(232, 200, 76);
     box-shadow: 1pt;
     width:100%;
     bottom: auto;
@@ -44,13 +48,13 @@
 }
 
 #tip{
-    background-color: rgb(206, 59, 59);
+    background-color: rgb(160, 68, 68);
     padding: 1vw;
 }
 
-#moreTips{
+#moretips{
     display: inline-block;
-    background-color: rgba(255, 136, 25, 0.87);
+    background-color: rgba(240, 151, 67, 0.87);
     padding-left: 5vw;
     padding-right: 5vw;
     margin-top: 10pt;
@@ -68,7 +72,7 @@
 }
 
 /*Simulation buttons*/
-.buttonBar {
+.buttonbar {
     margin-top: 30px;
     display: flex;
     display: -webkit-flex;
@@ -110,10 +114,10 @@
 
 }
 
-#dirbrcube {
+#directbridgecube {
     height: 15vw;
     aspect-ratio: 1 / 1;
-    background-color: rgb(168, 32, 32);
+    background-color: rgb(147, 50, 50);
     border: 2px solid rgb(36, 31, 31);
     padding: 10px;
     margin: 10px;
@@ -121,33 +125,33 @@
     animation: block-entry 1s ease-in;
 }
 
-#dirbrcubenext1 {
+#directbridgecubenext1 {
     visibility: hidden;
     height: 15vw;
     aspect-ratio: 1 / 1;
-    background-color: rgb(168, 32, 32);
+    background-color: rgb(147, 50, 50);
     border: 2px solid rgb(36, 31, 31);
     padding: 10px;
     margin: 10px;
     text-align: center;
 }
 
-#dirbrcubenext2 {
+#directbridgecubenext2 {
     visibility: hidden;
     height: 15vw;
     aspect-ratio: 1 / 1;
-    background-color: rgb(168, 32, 32);
+    background-color: rgb(147, 50, 50);
     border: 2px solid rgb(36, 31, 31);
     padding: 10px;
     margin: 10px;
     text-align: center;
 }
 
-#dirbrcubenext3 {
+#directbridgecubenext3 {
     visibility: hidden;
     height: 15vw;
     aspect-ratio: 1 / 1;
-    background-color: rgb(168, 32, 32);
+    background-color: rgb(147, 50, 50);
     border: 2px solid rgb(36, 31, 31);
     padding: 10px;
     margin: 10px;
@@ -166,11 +170,11 @@
     }
 }
 
-#dirbrcubenext4 {
+#directbridgecubenext4 {
     visibility: hidden;
     height: 15vw;
     aspect-ratio: 1 / 1;
-    background-color: rgb(168, 32, 32);
+    background-color: rgb(147, 50, 50);
     border: 2px solid rgb(36, 31, 31);
     transform-origin: center bottom;
     transition: .5s linear;
@@ -180,11 +184,11 @@
     text-align: center;
 }
 
-#dirbrcubenext5 {
+#directbridgecubenext5 {
     visibility: hidden;
     height: 15vw;
     aspect-ratio: 1 / 1;
-    background-color: rgb(168, 32, 32);
+    background-color: rgb(147, 50, 50);
     border: 2px solid rgb(36, 31, 31);
     transform-origin: center bottom;
     transition: .5s linear;

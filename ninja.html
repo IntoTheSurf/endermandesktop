@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minecraft Speedbridging</title>
+  <script type='text/javascript'>
+    title = "Ninja --- ";
+    position = 0;
+    function scrolltitle() {
+      document.title = title.substring(position, title.length) + title.substring(0, position);
+      position++;
+      if (position > title.length) position = 0;
+      titleScroll = window.setTimeout(scrolltitle, 300);
+    }
+    scrolltitle();
+  </script>
+  <link rel="stylesheet" type="text/css" href="./styles/style.css" />
+  <link rel="stylesheet" type="text/css" href="./styles/bridges.css" />
+  <link rel="icon" href="mc.png">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous" />
+</head>
+
+<body>
+  <div id="wrapper">
+
+    <!---HEADER--->
+    <header>
+      <div class="container flex-container">
+        <h2><a href="./index.html" style="text-decoration: none">Bridging</a></h2>
+        <nav class="navbar">
+          <div class="dropdown" id="simple">
+            <button class="dropbtn">Simple
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="./ninja.html">Ninja</a>
+              <a href="./breezily.html">Breezily</a>
+              <a href="./witchly.html">Witchly</a>
+            </div>
+          </div>
+          <div class="dropdown" id="advanced">
+            <button class="dropbtn">Advanced
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="./godbridge.html">Godbridge</a>
+              <a href="./others.html">Others</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <section id="cover" class="section-box">
+      <div id="bg-gradient"></div>
+      <div id="cover-text" class="container">
+        <h1 id="covertext">
+          Ninja
+        </h1>
+      </div>
+    </section>
+
+    <section>
+      <div class="introduction">
+        <p>
+        <h1>Basics</h1>
+        Ninjabridging is the first method most people learn. It is also the easiest to learn, but requires hard work to
+        master.
+        </br>This method is popular because it includes crouching in short intervals, stopping you from falling down
+        from your bridge.
+        </p>
+      </div>
+    </section>
+    <section class="instructions" id="directinstructions">
+      <h2>Direct bridge instructions</h2>
+      <p id="instructionslist">
+        <b class="num">1.</b> Place down a block and get on top of it.
+        </br><b class="num">2.</b> Crouch and go backwards until you hit the edge of the block.
+        </br><b class="num">3.</b> Still holding crouch, look down and place a new block. Note: Do not move the position
+        of your mouse
+        until you're finished with the bridge!
+        </br><b class="num">4.</b> Once you've placed a new block, let go of crouch and hold the down button, hitting
+        crouch just before
+        you reach the edge.
+        </br><b class="num">5.</b> Quickly place down another block without letting go of the down button.
+      </p>
+      <p class="tipline"><b id="tip">Tip!</b> Learn to hold a steady rhythm. This will help you learn more difficult
+        methods, such as breezily.
+      </p>
+    </section>
+    <!--Direct Bridge Simulator-->
+    <section id="dirbr">
+      <div class=buttonbar>
+        <button type="button" class="button" onclick="addRow(1)">More rows</button>
+        <button type="button" class="button" onclick="removeRow(1)">Less rows</button>
+        <button type="button" class="button" onclick="resetBridge(1)">Reset</button>
+        <button type="button" class="button" onclick="resetBridge(3)">Reset animation</button>
+      </div>
+      <div class="directbridge">
+
+
+        <div class="directcube" id="directbridgecube" onclick="nextBlock()">
+
+        </div>
+        <div class="directcube" id="directbridgecubenext1" onclick="nextBlock()">
+
+        </div>
+        <div class="directcube" id="directbridgecubenext2" onclick="nextBlock()">
+
+        </div>
+        <div class="directcube" id="directbridgecubenext3" onclick="nextBlock()">
+
+        </div>
+
+      </div>
+    </section>
+    <!--Diagonal instructions-->
+    <section class="instructions" id="diagonalinstructions">
+      <h2>Diagonal bridge instructions</h2>
+      <p id="instructionslist">
+        <b class="num">1.</b> This method is very similar to direct bridging. Place down a block and get on top of it,
+        then angle yourself diagonally.
+        </br><b class="num">2.</b> Crouch and go backwards until you hit the edge of the block.
+        </br><b class="num">3.</b> Still holding crouch, look down and place two new blocks. Note: Do not move the
+        position
+        of your mouse
+        until you're finished with the bridge!
+        </br><b class="num">4.</b> Once you've placed a new block, let go of crouch and hold the down button, hitting
+        crouch just before
+        you reach the edge. Walking backwards takes a bit longer than directly.
+        </br><b class="num">5.</b> Quickly place down two new blocks without letting go of the down button.
+      </p>
+      <p class="tipline"><b id="tip">Tip!</b> Find the angle that works best for you and practice with it.
+      </p>
+    </section>
+    <!--Diagonal bridge simulator-->
+    <section class="diagonalbridge">
+      <div class="diabrcontainer">
+        <div class=buttonbar>
+          <button type="button" class="button" onclick="addRow(2)">More rows</button>
+          <button type="button" class="button" onclick="removeRow(2)">Less rows</button>
+          <button type="button" class="button" onclick="resetBridge(2)">Reset</button>
+          <button type="button" class="button" onclick="resetBridge(4)">Reset animation</button>
+        </div>
+        <div class="trio" id="trio1">
+          <div class="cellc" id="cellc1" onclick="nextBlockDiagonal()">
+            <p></p>
+          </div>
+          <div class="cellc" id="cellc2" onclick="nextBlockDiagonal()">
+            <p></p>
+          </div>
+          <div class="cell">
+            <p></p>
+          </div>
+          <div class="cell">
+            <p></p>
+          </div>
+        </div>
+        <div class="trio" id="trio2">
+          <div class="cell">
+            <p></p>
+          </div>
+          <div class="cellc" id="cellc3" onclick="nextBlockDiagonal()">
+            <p></p>
+          </div>
+          <div class="cellc" id="cellc4" onclick="nextBlockDiagonal()">
+            <p></p>
+          </div>
+          <div class="cell">
+            <p></p>
+          </div>
+        </div>
+        <div class="trio" id="trio3">
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cellc" id="cellc5" onclick="nextBlockDiagonal()"></div>
+          <div class="cellc" id="cellc6" onclick="nextBlockDiagonal()"></div>
+        </div>
+      </div>
+    </section>
+
+    <!--More tips--> 
+    <section class="instructions" id="moretips">
+      <h2>More tips: </h2>
+      <p id="instructionslist">
+        <b class="num">1.</b> Don't try to let go of the crouch immediately. Try learning to bridhe while continuously
+        crouching to get used to how it feels
+        </br><b class="num">2.</b> While practicing, it is ok to hold crouch longer. The more comfortable you get, the
+        sooner you can let go.
+      </br><b class="num">3.</b> It is ok to fall off. The more you practice, the easier it gets!
+      </p>
+    </section>
+    <!-- Footer: contact, copyright, secret -->
+    <footer>
+      <div id="footerbox" class="container">
+        <ul id="socmedlist">
+          <li title="Twitter">
+            <a class="socmedlinks" href="https://www.twitter.com/" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li title="Instagram">
+            <a class="socmedlinks" href="https://www.instagram.com/" target="_blank">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </li>
+          <li title="Email">
+            <a class="socmedlinks" href="mailto:myemail@fesb.hr">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </li>
+          <li title="Hypixel">
+            <a class="socmedlinks" href="https://hypixel.net/">
+              <img id="hypixel" src="images/hypixel.png" alt="hypixel">
+            </a>
+          </li>
+        </ul>
+        <p id="copyright">
+          2022, Minecraft&trade; is a property of Mojang. <br />
+          <strong>Site by: Demi Pavišić</strong>
+        </p>
+      </div>
+      <img src="./images/Enderman.png" alt="A friendly Enderman. Click?" height="100" id="endImg" onclick="showEnder()">
+    </footer>
+  </div>
+  <script src="./js/bridges.js"></script>
+  <script src="./js/endertechno.js"></script>
+</body>
+
+</html>

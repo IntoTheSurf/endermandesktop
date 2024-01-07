@@ -5,20 +5,20 @@ let dirbr = 4;
 
 function nextBlock() {
     if (counter == 3) {
-        document.getElementById("dirbrcubenext4").style.visibility = "visible";
+        document.getElementById("directbridgecubenext4").style.visibility = "visible";
         counter = 4;
     }
     if (counter == 2) {
-        document.getElementById("dirbrcubenext3").style.visibility = "visible";
+        document.getElementById("directbridgecubenext3").style.visibility = "visible";
         counter = 3;
     }
 
     if (counter == 1) {
-        document.getElementById("dirbrcubenext2").style.visibility = "visible";
+        document.getElementById("directbridgecubenext2").style.visibility = "visible";
         counter = 2;
     }
     if (counter == 0) {
-        document.getElementById("dirbrcubenext1").style.visibility = "visible";
+        document.getElementById("directbridgecubenext1").style.visibility = "visible";
         counter = 1;
     }
 }
@@ -96,7 +96,7 @@ function nextBlockDiagonalBrWi(y) {
 
 function resetBridge(i) {
     if (i == 1) {
-        var elements = document.getElementsByClassName('dircube');
+        var elements = document.getElementsByClassName('directcube');
         for (var i in elements) {
             i++;
             if (elements.hasOwnProperty(i)) {
@@ -120,16 +120,16 @@ function resetBridge(i) {
 
     if (i == 3) {
         setTimeout(function () {
-            document.getElementById("dirbrcubenext4").style.visibility = "hidden";
+            document.getElementById("directbridgecubenext4").style.visibility = "hidden";
         }, 10);
         setTimeout(function () {
-            document.getElementById("dirbrcubenext3").style.visibility = "hidden";
+            document.getElementById("directbridgecubenext3").style.visibility = "hidden";
         }, 150);
         setTimeout(function () {
-            document.getElementById("dirbrcubenext2").style.visibility = "hidden";
+            document.getElementById("directbridgecubenext2").style.visibility = "hidden";
         }, 300);
         setTimeout(function () {
-            document.getElementById("dirbrcubenext1").style.visibility = "hidden";
+            document.getElementById("directbridgecubenext1").style.visibility = "hidden";
         }, 450);
         counter = 0;
     }
@@ -163,8 +163,8 @@ function addRow(i) {
     if (i == 1) {
         if (dirbr == 4) {
             const html = `
-            <div class="dircube" id="dirbrcubenext4" onclick="nextBlock()"></div>`;
-            const two = document.querySelector('.directbridge #dirbrcubenext3');
+            <div class="directcube" id="directbridgecubenext4" onclick="nextBlock()"></div>`;
+            const two = document.querySelector('.directbridge #directbridgecubenext3');
 
             // Using insertAdjacentHTML to add the HTML before the two element
             two.insertAdjacentHTML('afterend', html);
@@ -172,8 +172,8 @@ function addRow(i) {
         }
         if (dirbr == 3) {
             const html = `
-            <div class="dircube" id="dirbrcubenext3" onclick="nextBlock()"></div>`;
-            const two = document.querySelector('.directbridge #dirbrcubenext2');
+            <div class="directcube" id="directbridgecubenext3" onclick="nextBlock()"></div>`;
+            const two = document.querySelector('.directbridge #directbridgecubenext2');
 
             // Using insertAdjacentHTML to add the HTML before the two element
             two.insertAdjacentHTML('afterend', html);
@@ -181,8 +181,8 @@ function addRow(i) {
         }
         if (dirbr == 2) {
             const html = `
-            <div class="dircube" id="dirbrcubenext2" onclick="nextBlock()"></div>`;
-            const two = document.querySelector('.directbridge #dirbrcubenext1');
+            <div class="directcube" id="directbridgecubenext2" onclick="nextBlock()"></div>`;
+            const two = document.querySelector('.directbridge #directbridgecubenext1');
 
             // Using insertAdjacentHTML to add the HTML before the two element
             two.insertAdjacentHTML('afterend', html);
@@ -245,7 +245,7 @@ function addRow(i) {
 function removeRow(i) {
     if (i == 1) {
         if (dirbr == 4) {
-            const element = document.getElementById("dirbrcubenext3");
+            const element = document.getElementById("directbridgecubenext3");
             element.remove();
             if (counter == 3) {
                 counter = 2;
@@ -253,7 +253,7 @@ function removeRow(i) {
             dirbr = 3;
         }
         if (dirbr == 5) {
-            const element = document.getElementById("dirbrcubenext4");
+            const element = document.getElementById("directbridgecubenext4");
             element.remove();
             if (counter == 4) {
                 counter = 2;

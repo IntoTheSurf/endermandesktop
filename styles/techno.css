@@ -23,7 +23,7 @@ a {
 }
 
 /*Desktop icons*/
-.desktopIcons {
+.desktopicons {
     display: flex;
     align-items: flex-start;
     justify-items: flex-start;
@@ -53,7 +53,7 @@ a {
 
 
 
-.iconImg {
+.iconimg {
     padding-top: 1px;
     padding-left: 1px;
     padding-right: 1px;
@@ -66,7 +66,7 @@ a {
     background-color: rgba(139, 139, 139, 0.171) !important;
 }
 
-.iconRow {
+.iconrow {
     display: flex;
     align-items: flex-start;
     justify-items: flex-start;
@@ -74,7 +74,7 @@ a {
     z-index: 4;
 }
 
-.iconText {
+.icontext {
     color: white;
     font-family: Arial;
     background-color: rgba(255, 255, 255, 0.199);
@@ -93,7 +93,7 @@ a {
     left: 0px;
 }
 
-.homeIcon {
+.homeicon {
     height: 90%;
     margin: 2px;
     margin-right: 10px;
@@ -101,7 +101,7 @@ a {
     transition: 0.2s;
 }
 
-#homeContainer {
+#homecontainer {
     width: 57px;
     border-right: 1px dashed #eeeeee;
 }
@@ -112,7 +112,7 @@ a {
     z-index: 7;
 }
 
-#tasksContainer {
+#taskscontainer {
     max-height: 100%;
     display: flex;
     flex-direction: row;
@@ -137,8 +137,8 @@ a {
 }
 
 
-#homeContainer:hover, .taskOpen:hover, #backToDesktop:hover {
-    background-color: rgb(255, 62, 62) !important;
+#homecontainer:hover, .taskOpen:hover, #backToDesktop:hover {
+    background-color: rgb(191, 58, 58) !important;
 }
 
 .taskName {
@@ -157,14 +157,13 @@ a {
 
 /*START MENU*/
 
-.startModal {
+.startmodal {
     overflow: auto;
     display: none;
     position: fixed;
     padding-top: 100px;
     width: 100%;
     height: 100%;
-    overflow: auto;
     background-color: rgba(0, 0, 0, 0.096);
 
 }
@@ -185,7 +184,7 @@ a {
     flex-direction: column;
 }
 
-.startItem {
+.startitem {
     display: flex;
     flex-direction: row;
     max-height: 100px;
@@ -193,18 +192,18 @@ a {
     transition: 0.2s;
 }
 
-.startItem:hover {
+.startitem:hover {
     background-color: #302f2f;
 }
 
-.startImg {
+.startimg {
     max-height: 80%;
     padding: 15px;
     width: auto;
     aspect-ratio: 1;
 }
 
-.startText {
+.starttext {
     color: whitesmoke;
     margin: auto;
 }
@@ -244,7 +243,6 @@ a {
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
     background-color: rgba(0, 0, 0, 0.096);
 }
 
@@ -339,7 +337,7 @@ a {
 }
 
 /* Hide the slides by default */
-.mySlides {
+.galleryslides {
     display: none;
 }
 
@@ -446,7 +444,7 @@ h5 {
     clear: both;
 }
 
-.aboutContainer {
+.aboutcontainer {
     padding: 0.01em 16px;
     color: #fff !important;
     background-color: #af3636 !important;
@@ -454,11 +452,11 @@ h5 {
 
 /*About modal buttons*/
 
-.abtTitle {
+.abttitle {
     padding: 8px;
 }
 
-.closeAbt {
+.closeabout {
     display: inline-block;
     padding: 8px 16px;
     vertical-align: middle;
@@ -473,7 +471,7 @@ h5 {
     top: 0;
 }
 
-.minimizeAbt {
+.minimizeabt {
     border: none;
     display: inline-block;
     padding: 8px 16px;
@@ -489,8 +487,8 @@ h5 {
     top: 0;
 }
 
-.closeAbt:hover,
-.closeAbt:focus, .minimizeAbt:hover, .minimizeAbt:focus, .minimize:hover, .minimize:focus, .close:hover,
+.closeabout:hover,
+.closeabout:focus, .minimizeabt:hover, .minimizeabt:focus, .minimize:hover, .minimize:focus, .close:hover,
 .close:focus {
     color: #999;
     text-decoration: none;
@@ -510,7 +508,7 @@ h5 {
 
 /*TAB BAR*/
 
-.tabBar {
+.tabbar {
     width: 100%;
     overflow: hidden;
     border-bottom: 1px solid rgb(53, 53, 53) !important;
@@ -518,7 +516,7 @@ h5 {
     background-color: #222222;
 }
 
-.barItem {
+.baritem {
     padding: 8px 16px;
     float: left;
     width: auto;
@@ -533,7 +531,7 @@ h5 {
 }
 
 
-.abtTabs {
+.abouttabs {
     border: none;
     display: inline-block;
     padding: 8px 16px;
@@ -547,7 +545,7 @@ h5 {
     white-space: nowrap
 }
 
-.abtTabs:hover {
+.abouttabs:hover {
     color: #000 !important;
     background-color: rgb(255, 175, 175) !important;
 }
@@ -556,7 +554,7 @@ h5 {
 
 /*ABOUT CONTENT - BASIC INFO*/
 
-.tabArea {
+.tabarea {
     background-color: #999;
     border-left: 1px ridge #2e204e;
     height: 310px;
@@ -573,7 +571,7 @@ h5 {
     background-color: #252525 !important;
 }
 
-.abtTable {
+.abttable {
     margin: 5px;
     display: flex;
     flex-direction: column;
@@ -606,14 +604,14 @@ table tr td:last-child {
     border-right: 0;
 }
 
-.abtImage {
+.abtimage {
     height: 150px;
     width: auto;
     padding: 10px;
     border-bottom: 1px ridge #e0dee4;
 }
 
-.enderInfo {
+.enderinfo {
     color: #e0dee4 !important;
 }
 
@@ -673,7 +671,7 @@ p {
 
 
 
-.biomeText, .audioText {
+.biometext, .audiotext {
     font-size: 16px;
     font-weight: bold;
     width: 100%;
@@ -682,14 +680,14 @@ p {
     font-family: Verdana, sans-serif !important;
 }
 
-.biomeRow {
+.biomerow {
     display: flex;
     flex-direction: row;
     width: 100%;
 
 }
 
-.biomeImg {
+.biomeimg {
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
@@ -699,13 +697,13 @@ p {
     width: 50px !important;
 }
 
-.biomeImg:hover {
+.biomeimg:hover {
     opacity: 0.7;
     border-radius: 1px;
 }
 
 /* The Modal (background) */
-.biomeGallery {
+.biomegallery {
     display: none;
     /* Hidden by default */
     position: fixed;
@@ -769,7 +767,7 @@ p {
 }
 
 /* The Close Button */
-.closeBiome {
+.closebiome {
     position: absolute;
     top: 10px;
     right: 30px;
@@ -779,8 +777,8 @@ p {
     transition: 0.3s;
 }
 
-.closeBiome:hover,
-.closeBiome:focus {
+.closebiome:hover,
+.closebiome:focus {
     color: #bbb;
     text-decoration: none;
     cursor: pointer;
@@ -805,14 +803,14 @@ p {
     overflow: auto;
 }
 
-.audioRow {
+.audiorow {
     display: flex;
     flex-direction: row;
     flex: 1 1 0;
     width: 100%;
 }
 
-.iconAudio {
+.iconaudio {
     margin: auto;
     padding-top: 2px;
     padding-left: 2px;
@@ -821,14 +819,14 @@ p {
 
 }
 
-.audioContainer {
+.audiocontainer {
     display: block;
     width: 100%;
     padding: auto;
     text-align: center;
 }
 
-.audioPlayer {
+.audioplayer {
     display: none;
     background-color: #161616;
     height: 100px;
@@ -885,7 +883,7 @@ p {
     color: whitesmoke;
 }
 
-.trivTabs:hover {
+.triviatabs:hover {
     color: #000 !important;
     background-color: rgb(255, 175, 175) !important;
 }
@@ -931,7 +929,7 @@ p {
     overflow-y: auto;
 }
 
-.triviaRow {
+.triviarow {
     margin: auto;
     display: flex;
     flex-direction: row;
@@ -939,7 +937,7 @@ p {
     margin-bottom: 10px;
 }
 
-.triviaBox {
+.triviabox {
     margin: auto;
     height: 150px;
     width: auto;
@@ -951,7 +949,7 @@ p {
     font-size: 20px;
 }
 
-.triviaBox:hover {
+.triviabox:hover {
     background-color: #db6d6d;
 }
 
@@ -978,7 +976,7 @@ p {
     word-wrap: break-word;
 }
 
-.trivImage {
+.triviaimg {
     margin: auto;
     float: left;
     text-align: center !important;
@@ -987,7 +985,7 @@ p {
     flex: 1 1 0;
 }
 
-.dblImgContainer {
+.doubleimagecontainer {
     background-color: #161616;
     color: #ccc;
     width: 100%;
@@ -998,7 +996,7 @@ p {
     text-align: center;
 }
 
-.trivDblImg {
+.triviadoubleimage {
     display: flex;
     flex-direction: row;
     margin: auto;
@@ -1008,7 +1006,7 @@ p {
     padding: 1px;
 }
 
-.trivSideImage {
+.trivsideimage {
     margin: 20px;
     padding: 5px !important;
     background-color: #161616;
@@ -1016,25 +1014,25 @@ p {
     width: auto;
 }
 
-.wideTriv {
+.widetriv {
     margin: 5px;
     max-height: 200px !important;
     max-width: 300px;
     text-align: center !important;
 }
 
-.narrowTriv {
+.narrowtriv {
     margin: 5px;
     max-width: 200px;
     text-align: center !important;
 }
 
-.leftTriv {
+.lefttriv {
     float: left;
     margin-right: 20px !important;
 }
 
-.rightTriv {
+.righttriv {
     float: right;
     margin-left: 20px !important;
 }
@@ -1064,9 +1062,9 @@ p {
     background: #555;
 }
 
-/*TECHNOBLADE*/
+/*technoblade*/
 
-#technoBlade {
+#technoblade {
     position: absolute;
     bottom: 50px;
     right: 0px;
@@ -1086,7 +1084,7 @@ p {
     padding: 3px;
 }
 
-.technoIcon {
+.technoicon {
     margin: 5px;
     padding-top: 2px;
     padding-left: 2px;
@@ -1095,7 +1093,7 @@ p {
 }
 
 
-.technoIcon:hover {
+.technoicon:hover {
     cursor: pointer !important;
     background-color: rgba(139, 139, 139, 0.171) !important;
 }

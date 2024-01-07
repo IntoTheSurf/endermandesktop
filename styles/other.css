@@ -7,7 +7,7 @@
   background-size: cover;
 }
 
-.bridgeTypes {
+.bridgetypes {
 display:flex;
 width: 100%;
 flex-direction: column;
@@ -17,7 +17,7 @@ flex-wrap: wrap;
 
 /*MISC BRIDGE CARDS*/
 
-.bridgeCard {
+.bridgecard {
   display: flex;
   min-height: 300px;
   width: 100%;
@@ -38,7 +38,7 @@ flex-wrap: wrap;
   margin-left: 20px;
 }
 
-.bridgeTitle{
+.bridgetitle{
   display: inline-block;
   height: auto;
   width: auto;
@@ -48,21 +48,21 @@ flex-wrap: wrap;
 }
 
 #title1 {
-  background-color: darksalmon;
+  background-color: #fb90a3;
   text-align: center;
 }
 
 #title2 {
-  background-color: aqua;
+  background-color: #36eaea;
   text-align: center;
 }
 
 #title3 {
-  background-color: rgb(250, 97, 41);
+  background-color: rgb(247, 126, 82);
   text-align: center;
 }
 
-.bridgeText{
+.bridgetext{
   padding: 10px;
   padding-bottom: 15px !important;
   margin: 3px auto;
@@ -73,7 +73,7 @@ flex-wrap: wrap;
   margin-right: 10px;
 }
 
-.bridgeDesc{
+.bridgedesc{
   padding: 10px;
   min-width: 30vw;
   max-width: auto;
@@ -81,33 +81,35 @@ flex-wrap: wrap;
   height: 80%;
   text-align: center;
   margin-bottom: 10px ;
+  color:#2b6886;
+  font-size: 25px;
 }
 
-#brDesc1 {
+#bridgedesc1 {
   background-color: rgb(252, 214, 220);
   margin-bottom: 10px;
 }
 
-#brDesc2 {
-  background-color: rgb(172, 248, 223);
+#bridgedesc2 {
+  background-color: rgb(170, 247, 247);
   margin-bottom: 10px;
 }
 
-#brDesc3 {
-  background-color: rgb(252, 156, 121);
+#bridgedesc3 {
+  background-color: rgb(255, 185, 159);
   margin-bottom: 10px;
 }
 
-#otherBridge1{
-  background-color: pink;
+#otherbridge1{
+  background-color: #f9c0ca;
 }
 
 #otherBridge2{
-  background-color: aquamarine;
+  background-color: #8cf0f0;
 }
 
 #otherBridge3{
-  background-color: coral;
+  background-color: #fda280;
 }
 
 .instructions{

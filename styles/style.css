@@ -1,18 +1,23 @@
 * {
   box-sizing: border-box;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  color: antiquewhite;
+  color: whitesmoke;
+}
+
+html{
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 body {
-  background-color: #0a140a;
+  background-color: rgb(21, 32, 22);
   margin: 0;
   min-height: 100%;
 }
 
 /*Header*/
 #wrapper {
-  background-color: #0a140a;
+  background-color: rgb(21, 32, 22);
 }
 
 #wrapper .container {
@@ -30,7 +35,7 @@ header {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  background-color: rgba(0, 51, 0);
+  background-color: rgb(23, 49, 25);
   padding: 0px 0;
   z-index: 2;
 }
@@ -71,7 +76,7 @@ header h2 {
 }
 
 .dropdown:hover .dropbtn {
-  background-color: rgb(30, 97, 28);
+  background-color: rgb(45, 94, 51);
 }
 
 .dropdown-content {
@@ -107,7 +112,7 @@ header h2 {
 }
 
 .endermen:hover {
-  background-color: blueviolet;
+  background-color: #7d3cdd;
 
 }
 
@@ -116,9 +121,10 @@ header h2 {
   position: fixed;
   right: 0px;
   bottom: 0px;
+  z-index: 4;
 }
 
-#endImg:hover{
+#endImg:hover {
   animation-name: show;
   animation-duration: 4s;
   animation-delay: 1s;
@@ -126,8 +132,13 @@ header h2 {
 }
 
 @keyframes show {
-  from {opacity: 0.0;}
-  to {opacity: 0.9;}
+  from {
+    opacity: 0.0;
+  }
+
+  to {
+    opacity: 0.9;
+  }
 }
 
 /*Header*/
@@ -160,7 +171,7 @@ section.section-box {
 }
 
 #cover h1 {
-  color: antiquewhite;
+  color: whitesmoke;
   position: absolute;
   top: 20;
   left: 5px;
@@ -170,6 +181,8 @@ section.section-box {
   display: flex;
   flex-direction: column;
   align-items: left;
+  margin-left: 80px;
+  padding-top: 26px;
 }
 
 /*Text*/
@@ -209,13 +222,13 @@ section.section-box {
   flex-direction: row;
 }
 
-#cardstxtbox {
-  background-color: rgb(47, 66, 29);
+.cardstxtbox {
+  background-color: rgb(55, 85, 57);
   width: 50vw;
   position: relative;
 }
 
-#cardstxt {
+.cardstxt {
   margin: 0;
   position: absolute;
   top: 50%;
@@ -225,7 +238,7 @@ section.section-box {
   text-align: center;
 }
 
-#cardsimg {
+.cardsimg {
   width: 49vw;
 
   transition: transform 1.2s ease-in-out;
@@ -234,29 +247,91 @@ section.section-box {
   -o-transition: transform 1.2s ease-in-out;
 }
 
-#cardsimg:hover {
-  cursor: pointer;
-  background: linear-gradient(to left, transparent, transparent, rgba(47, 66, 29, 0.5), rgb(47, 66, 29));
 
+
+/*card images*/
+
+#cardimgr1 {
+  position: relative;
+  background: linear-gradient(to left, transparent, transparent, rgba(47, 66, 29, 0.5), rgba(47, 66, 29, 0.9), rgb(55, 85, 57)),
+    url("../images/bridges/ninjabridge.gif") no-repeat;
+  background-size: cover;
+  z-index: 1;
 }
 
-/*important!*/
-
-.cardimgr {
-  position: relative;
-  background: linear-gradient(to left, transparent, transparent, rgba(47, 66, 29, 0.5), rgba(47, 66, 29, 0.9), rgb(47, 66, 29));
-  z-index: 1;
+#cardimgr1:hover {
+  background: linear-gradient(to left, transparent, transparent, rgba(47, 66, 29, 0.5), rgb(55, 85, 57)), url("../images/bridges/ninjabridge.gif") no-repeat;
+  background-size: cover;
 }
 
 #imgcsi {
   position: relative;
   z-index: 2;
+  transition: all 2s linear !important;
+}
+
+
+#cardimgl {
+  background: linear-gradient(to right, transparent, transparent, rgba(47, 66, 29, 0.5), rgba(47, 66, 29, 0.9), rgb(55, 85, 57)),
+    url("../images/bridges/breezily.gif") no-repeat;
+  background-size: cover;
+}
+
+#cardimgl:hover {
+  cursor: pointer;
+  background: linear-gradient(to right, transparent, transparent, rgba(47, 66, 29, 0.5), rgb(55, 85, 57)), url("../images/bridges/breezily.gif") no-repeat;
+  background-size: cover;
 
 }
 
-.cardimgl {
-  background: linear-gradient(to right, transparent, transparent, rgba(47, 66, 29, 0.5), rgba(47, 66, 29, 0.9), rgb(47, 66, 29)),
-    url("../images/footer.jpg");
+#cardimgr2 {
+  position: relative;
+  background: linear-gradient(to left, transparent, transparent, rgba(47, 66, 29, 0.5), rgba(47, 66, 29, 0.9), rgb(55, 85, 57)),
+    url("../images/bridges/godbridge.gif") no-repeat;
+  background-size: cover;
+  z-index: 1;
+}
+
+#cardimgr2:hover {
+  background: linear-gradient(to left, transparent, transparent, rgba(47, 66, 29, 0.5), rgb(55, 85, 57)), url("../images/bridges/godbridge.gif") no-repeat;
+  background-size: cover;
+
+}
+
+/*Basic information*/
+
+.num{
+  background-color: rgb(160, 68, 68);
+  padding: 0.8vw;
+}
+
+.tipline{
+  background-color: rgb(232, 200, 76);
+  box-shadow: 1pt;
+  width:100%;
+  bottom: auto;
+  margin: 0;
+  color: brown;
+  padding: 0.7vw;
+  line-height: 30px;
+}
+
+#tip{
+  background-color: rgb(160, 68, 68);
+  padding: 1vw;
+}
+
+#moretips{
+  display: inline-block;
+  background-color: rgba(119, 188, 204, 0.87);
+  padding-left: 5vw;
+  padding-right: 5vw;
+  margin-top: 10pt;
+  margin-bottom: 10pt;
+  width: 100%;
+  position: relative;
+  vertical-align: middle;
+  line-height: 30px;
 }
 
 
@@ -273,7 +348,6 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color:
 
 }
 
@@ -292,7 +366,7 @@ footer {
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  border: 2px solid rgb(42, 87, 42);
+  border: 2px solid rgb(35, 75, 45);
   border-radius: 45%;
   color: #999;
   font-size: 24px;
@@ -300,7 +374,7 @@ footer {
 }
 
 .socmedlinks:hover {
-  background-color: rgb(87, 180, 92);
+  background-color: rgb(106, 172, 122);
   color: #c00a27;
   border-radius: 20%;
 }

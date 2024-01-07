@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Technoblade ---</title>
+    <title>technoblade ---</title>
     <script type='text/javascript'>
-        title = "Technoblade ---";
+        title = "technoblade ---";
         position = 0;
         function scrolltitle() {
             document.title = title.substring(position, title.length) + title.substring(0, position);
@@ -28,37 +28,37 @@
 <body>
 
     <div class="desktop" id="desktop">
-        <div class="desktopIcons">
-            <div class="iconRow" id="row1">
+        <div class="desktopicons">
+            <div class="iconrow" id="row1">
                 <div class="icon" onclick="outsideClick(); this.style.backgroundColor='rgba(139, 139, 139, 0.171)';"
                     ondblclick="this.style.backgroundColor='rgba(139, 139, 139, 0.0)'">
-                    <img class="iconImg" src="./images/icons/technoAbout.webp" alt="icon 1" id="icon1" width="60"
+                    <img class="iconimg" src="./images/icons/technoAbout.webp" alt="icon 1" id="icon1" width="60"
                         height="60"
                         ondblclick="document.getElementById('about').style.display='block'; openTask(0); this.style.backgroundColor='rgba(139, 139, 139, 0.0)'; document.getElementById('aboutTask').style.backgroundColor = 'rgb(252, 112, 112)';">
-                    <p class="iconText">About</p>
+                    <p class="icontext">About</p>
                 </div>
                 <div class="icon" onclick="outsideClick(); this.style.backgroundColor='rgba(139, 139, 139, 0.171)';"
                     ondblclick="this.style.backgroundColor='rgba(139, 139, 139, 0.0)'">
-                    <img class="iconImg" src="./images/icons/technoGallery.webp" alt="icon 2" id="icon2" width="60"
+                    <img class="iconimg" src="./images/icons/technoGallery.webp" alt="icon 2" id="icon2" width="60"
                         height="60"
                         ondblclick="openModal(); openTask(1); document.getElementById('galleryTask').style.backgroundColor = 'rgb(252, 112, 112)';">
-                    <p class="iconText">Gallery</p>
+                    <p class="icontext">Gallery</p>
                 </div>
                 <div class="icon" onclick="outsideClick(); this.style.backgroundColor='rgba(139, 139, 139, 0.171)'"
                     ondblclick="this.style.backgroundColor='rgba(139, 139, 139, 0.0)'">
-                    <img class="iconImg" src="./images/icons/technoTrivia.webp" alt="icon 3" id="icon3" width="75"
+                    <img class="iconimg" src="./images/icons/technoTrivia.webp" alt="icon 3" id="icon3" width="75"
                         height="75"
                         ondblclick="document.getElementById('trivia').style.display='block'; openTask(2), document.getElementById('triviaTask').style.backgroundColor = 'rgb(252, 112, 112)';">
-                    <p class="iconText">Trivia</p>
+                    <p class="icontext">Trivia</p>
                 </div>
             </div>
         </div>
         <div class="taskbar">
 
-            <div id="homeContainer">
-                <img src="./mc.png" alt="home" class="homeIcon">
+            <div id="homecontainer">
+                <img src="./mc.png" alt="home" class="homeicon">
             </div>
-            <div id="tasksContainer">
+            <div id="taskscontainer">
 
             </div>
             <div id="backToDesktop" onclick="minimizeEverything();">
@@ -66,15 +66,15 @@
             </div>
         </div>
 
-        <div id="technoBlade">
+        <div id="technoblade">
             <div id="pigstepcontainer">
-                <audio controls volume="0.2" autoplay id="pigstepplayer">
+                <audio controls volume="0.2" autoplay loop id="pigstepplayer">
                     <source src="./audio/05 - Pigstep (Stereo Mix).mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio>
             </div>
-            <div class="technoIcon" onclick="changeTechno();">
-                <img class="iconImg" id="technoImg" src="./images/technoblade/technoblade-flop-min-nmlh.webp"
+            <div class="technoicon" onclick="changeTechno();">
+                <img class="iconimg" id="technoImg" src="./images/technoblade/technoblade-flop-min-nmlh.webp"
                     alt="icon 3" id="icon3" width="75" height="auto">
             </div>
         </div>
@@ -82,25 +82,25 @@
 
     <!--START Modal-->
 
-    <!-- The Modal -->
-    <div id="start" class="startModal">
+    <!-- Start menu -->
+    <div id="start" class="startmodal">
 
-        <!-- Modal content -->
-        <div class="startContent">
+        <!-- Start menu items -->
+        <div class="startcontent">
             <div id="startMenu">
-                <div class="startItem"
+                <div class="startitem"
                     onclick="document.getElementById('about').style.display='block'; openTask(0); closeStart();">
-                    <img class="startImg" src="./images/icons/technoAbout.webp" width="60" height="60">
-                    <p class="startText">About</p>
+                    <img class="startimg" src="./images/icons/technoAbout.webp" width="60" height="60">
+                    <p class="starttext">About</p>
                 </div>
-                <div class="startItem" onclick="openModal(); openTask(1); closeStart();">
-                    <img class="startImg" src="./images/icons/technoGallery.webp" width="60" height="60">
-                    <p class="startText">Gallery</p>
+                <div class="startitem" onclick="openModal(); openTask(1); closeStart();">
+                    <img class="startimg" src="./images/icons/technoGallery.webp" width="60" height="60">
+                    <p class="starttext">Gallery</p>
                 </div>
-                <div class="startItem"
+                <div class="startitem"
                     onclick="document.getElementById('trivia').style.display='block'; openTask(2); closeStart();">
-                    <img class="startImg" src="./mc.png" width="60" height="60">
-                    <p class="startText">Trivia</p>
+                    <img class="startimg" src="./images/icons/technoTrivia.webp" width="60" height="60">
+                    <p class="starttext">Trivia</p>
                 </div>
             </div>
         </div>
@@ -111,32 +111,36 @@
     <!--ABOUT Modal-->
     <div class="modal" id="about">
         <div id="aboutModal">
-            <header class="aboutContainer">
-                <span onclick="document.getElementById('about').style.display='none'" class="minimizeAbt">&minus;</span>
+            <header class="aboutcontainer">
+                <span onclick="document.getElementById('about').style.display='none'" class="minimizeabt">&minus;</span>
                 <span class="vl"></span>
                 <span
                     onclick="document.getElementById('about').style.display='none'; closeCity(event, 'aboutContent'); closeTask('aboutTask')"
-                    class="closeAbt">&times;</span>
-                <div class="abtTitle"><strong> About Technoblade</strong></div>
+                    class="closeabout">&times;</span>
+                <div class="abttitle"><strong> About technoblade</strong></div>
             </header>
-            <div class="tabBar">
-                <button class="tablink barItem abtTabs" id="firstTab"
-                    onclick="openCity(event, 'aboutContent')">About</button>
-                <button class="tablink barItem abtTabs" id="lore"
-                    onclick="openCity(event, 'abtBehaviour')">Lore</button>
-                <button class="tablink barItem abtTabs" id="merch"
-                    onclick="openCity(event, 'abtGallery')">Merch</button>
-                <button class="tablink barItem abtTabs" id="quotes"
-                    onclick="openCity(event, 'audioSFX')">Quotes</button>
+
+            <!--ABOUT Tabs-->
+            <div class="tabbar">
+                <button class="tablink baritem abouttabs" id="firstTab"
+                    onclick="changeTab(event, 'aboutContent')">About</button>
+                <button class="tablink baritem abouttabs" id="lore"
+                    onclick="changeTab(event, 'abtBehaviour')">Lore</button>
+                <button class="tablink baritem abouttabs" id="merch"
+                    onclick="changeTab(event, 'abtGallery')">Merch</button>
+                <button class="tablink baritem abouttabs" id="quotes"
+                    onclick="changeTab(event, 'audioSFX')">Quotes</button>
             </div>
-            <div class="selectTab" id="aboutContent">
-                <div class="tabArea" id="profile">
-                    <div class="abtTable">
-                        <div class="abtImage">
-                            <img class="enderImg" src="./images/technoblade/Technoblade_skin.webp"
-                                alt="Technoblade's Minecraft skin" width="120">
+
+            <!--ABOUT Technoblade-->
+            <div class="selecttab" id="aboutContent">
+                <div class="tabarea" id="profile">
+                    <div class="abttable">
+                        <div class="abtimage">
+                            <img class="enderimg" src="./images/technoblade/technoblade_skin.webp"
+                                alt="technoblade's Minecraft skin" width="120">
                         </div>
-                        <div class="enderInfo">
+                        <div class="enderinfo">
                             <table>
                                 <tr>
                                     <td>Name</td>
@@ -144,11 +148,11 @@
                                 </tr>
                                 <tr>
                                     <td>IGN</td>
-                                    <td>Technoblade</td>
+                                    <td>technoblade</td>
                                 </tr>
                                 <tr>
                                     <td>Birth date</td>
-                                    <td>June 2022</td>
+                                    <td>June 1st 1999</td>
                                 </tr>
                                 <tr>
                                     <td>Height</td>
@@ -170,7 +174,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="tabArea" id="descText">
+                <div class="tabarea" id="descText">
                     <h2>About</h2>
                     <p>
                         Alexander "Alex", better known online as Technoblade and most commonly known as Techno,
@@ -197,12 +201,14 @@
                     </p>
                 </div>
             </div>
-            <div class="selectTab" id="abtBehaviour">
+
+            <!--Technoblade lore-->
+            <div class="selecttab" id="abtBehaviour">
                 <div>
                     <h2>
                         Lore
                     </h2>
-                    <span class="trivSideImage wideTriv leftTriv">
+                    <span class="trivsideimage widetriv lefttriv">
                         <img src="./images/technoblade/Duel_at_pogtoopia.webp" alt="Duel at Pogtopia" height="130">
                         <p class="imgdescription">Duel after Manberg Festival</p>
                     </span>
@@ -257,7 +263,7 @@
                 </div>
                 <div>
                     <h2>Prison arc</h2>
-                    <span class="trivSideImage wideTriv leftTriv"><img
+                    <span class="trivsideimage widetriv lefttriv"><img
                             src="./images/technoblade/dreamnoblade prison.png" alt="Dream and Technoblade in Prison"
                             height="150">
                         <p class="imgdescription">Prison arc</p>
@@ -276,48 +282,47 @@
                     </p>
                 </div>
             </div>
-            <div class="selectTab" id="abtGallery">
-                <!-- Trigger the Modal -->
-                <div class="biomeText">Vinyl figures and plushies</div>
-                <div class="biomeRow">
-                    <img class="biomeImg" id="biome1" src="./images/technoblade/merch/technoblade_concept.webp"
-                        alt="Technoblade" height="100" width="auto" onclick="openBiomeImg(1)">
-                    <img class="biomeImg" id="biome2" src="./images/technoblade/merch/technoplane-concept.webp"
-                        alt="Technoplane" height="100" width="auto" onclick="openBiomeImg(2)">
-                    <img class="biomeImg" id="biome3" src="./images/technoblade/merch/Anarchy_Technoblade_Art.webp"
-                        alt="Anarchy" height="100" width="auto" onclick="openBiomeImg(3)">
-                </div>
-                <div class="biomeText">Plushie only</div>
-                <div class="biomeRow">
-                    <img class="biomeImg" id="biome4"
-                        src="./images/technoblade/merch/Youtooz-Technoblade-Sit-1ft-Plush.webp" alt="Sit" width="100"
-                        onclick="openBiomeImg(4)">
-                    <img class="biomeImg" id="biome5"
-                        src="./images/technoblade/merch/Youtooz-Technoblade-Flop-1ft-Plush.webp" alt="Flop" width="100"
-                        onclick="openBiomeImg(5)">
-                    <img class="biomeImg" id="biome6"
-                        src="./images/technoblade/merch/Youtooz-Technoblade-1ft-Pillow-Plush.webp" alt="Pillow"
-                        width="100" onclick="openBiomeImg(6)">
-                </div>
-                <!-- The Modal -->
-                <div id="biomeModal" class="biomeGallery">
 
-                    <!-- The Close Button -->
-                    <span class="closeBiome">&times;</span>
+            <!--Technoblade merch-->
+            <div class="selecttab" id="abtGallery">
+                <div class="biometext">Vinyl figures and plushies</div>
+                <div class="biomerow">
+                    <img class="biomeimg" id="biome1" src="./images/technoblade/merch/technoblade_concept.png"
+                        alt="technoblade" height="100" width="auto" onclick="openbiomeimg(1)">
+                    <img class="biomeimg" id="biome2" src="./images/technoblade/merch/technoplane-concept.png"
+                        alt="Technoplane" height="100" width="auto" onclick="openbiomeimg(2)">
+                    <img class="biomeimg" id="biome3" src="./images/technoblade/merch/Anarchy_technoblade_Art.png"
+                        alt="Anarchy" height="100" width="auto" onclick="openbiomeimg(3)">
+                </div>
+                <div class="biometext">Plushie only</div>
+                <div class="biomerow">
+                    <img class="biomeimg" id="biome4"
+                        src="./images/technoblade/merch/Youtooz-technoblade-Sit-1ft-Plush.png" alt="Sit" width="100"
+                        onclick="openbiomeimg(4)">
+                    <img class="biomeimg" id="biome5"
+                        src="./images/technoblade/merch/Youtooz-technoblade-Flop-1ft-Plush.png" alt="Flop" width="100"
+                        onclick="openbiomeimg(5)">
+                    <img class="biomeimg" id="biome6"
+                        src="./images/technoblade/merch/Youtooz-technoblade-1ft-Pillow-Plush.png" alt="Pillow"
+                        width="100" onclick="openbiomeimg(6)">
+                </div>
 
-                    <!-- Modal Content (The Image) -->
+                <div id="biomeModal" class="biomegallery">
+
+                    <span class="closebiome">&times;</span>
+
                     <img class="modal-content" id="img01">
 
-                    <!-- Modal Caption (Image Text) -->
                     <div id="caption"></div>
                 </div>
 
 
             </div>
-            <div class="selectTab" id="audioSFX">
-                <!-- Trigger the Modal -->
-                <div class="audioText">Quotes</div>
-                <div class="audioRow">
+
+            <!--Technoblade quotes-->
+            <div class="selecttab" id="audioSFX">
+                <div class="audiotext">Quotes</div>
+                <div class="audiorow">
                     <ul>
                         <li>"USA! USA!"</li>
                         <li> "Technoblade never dies!"</li>
@@ -335,8 +340,8 @@
                         <li> "Absolute power corrupts absolutely."</li>
                         <li> "God, that toddler is getting destroyed."</li>
                         <li> "We’re leaving the past behind us."</li>
-                        <li> "Officer, I dropped kicked that child in SELF-DEFENSE."</li>
-                        <li> "NOT EVEN CLOSE BABY! TECHNOBLADE NEVER DIES!"</li>
+                        <li> "Officer, I drop kicked that child in SELF-DEFENSE."</li>
+                        <li> "NOT EVEN CLOSE BABY! Technoblade NEVER DIES!"</li>
                         <li> "Zeus is a god of feminism."</li>
                         <li> "Sic semper tyrannis"</li>
                         <li> "When God sends me to hell, I want him to hesitate."</li>
@@ -362,8 +367,8 @@
                 </div>
             </div>
 
-            <footer class="aboutContainer">
-                <div class="abtTitle">&ThickSpace;</div>
+            <footer class="aboutcontainer">
+                <div class="abttitle">&ThickSpace;</div>
             </footer>
         </div>
 
@@ -378,70 +383,72 @@
                     onclick="minimizeModal(); document.getElementById('galleryTask').style.backgroundColor='rgb(216, 81, 81)';">&minus;</span>
                 <span class="close" onclick="closeModal(); closeTask('galleryTask')">&times;</span>
             </div>
+
+            <!--Gallery slides -->
             <div class="lightboxContent">
 
-                <div class="mySlides" id="slide1">
+                <div class="galleryslides" id="slide1">
                     <div class="numbertext">1 / 12</div>
-                    <img class="lbImg" src="./images/technoblade/gallery/Technoblade_waifu2x_2x_3n_png.png"
+                    <img class="lbImg" src="./images/technoblade/gallery/technoblade_waifu2x_2x_3n_png.png"
                         style="width:100%">
                 </div>
 
-                <div class="mySlides" id="slide2">
+                <div class="galleryslides" id="slide2">
                     <div class="numbertext">2 / 12</div>
                     <img class="lbImg" src="./images/technoblade/gallery/Technotwit_waifu2x_2x_3n_png.png"
                         style="width:100%">
                 </div>
 
-                <div class="mySlides" id="slide3">
+                <div class="galleryslides" id="slide3">
                     <div class="numbertext">3 / 12</div>
                     <img class="lbImg" src="./images/technoblade/gallery/Technotwitch_waifu2x_2x_3n_png.png"
                         style="width:100%">
                 </div>
 
-                <div class="mySlides" id="slide4">
+                <div class="galleryslides" id="slide4">
                     <div class="numbertext">4 / 12</div>
                     <img class="lbImg" src="./images/technoblade/gallery/Technoface_waifu2x_2x_3n_png.png"
                         style="width:100%">
                 </div>
 
-                <div class="mySlides" id="slide5">
+                <div class="galleryslides" id="slide5">
                     <div class="numbertext">5 / 12</div>
                     <img class="lbImg" src="./images/technoblade/gallery/Floof_waifu2x_2x_3n_png.png"
                         style="width:100%">
                 </div>
 
-                <div class="mySlides" id="slide6">
+                <div class="galleryslides" id="slide6">
                     <div class="numbertext">6 / 12</div>
                     <img class="lbImg" src="./images/technoblade/gallery/Hot_elbow_waifu2x_2x_3n_png.png"
                         style="width:100%">
                 </div>
-                <div class="mySlides" id="slide7">
+                <div class="galleryslides" id="slide7">
                     <div class="numbertext">7 / 12</div>
                     <img class="lbImg" src="./images/technoblade/gallery/jump.jpg" style="width:100%">
                 </div>
 
-                <div class="mySlides" id="slide8">
+                <div class="galleryslides" id="slide8">
                     <div class="numbertext">8 / 12</div>
                     <img class="lbImg" src="./images/technoblade/gallery/circle_waifu2x_2x_2n.gif" style="width:100%">
                 </div>
 
-                <div class="mySlides" id="slide9">
+                <div class="galleryslides" id="slide9">
                     <div class="numbertext">9 / 12</div>
                     <img class="lbImg" src="./images/technoblade/gallery/in netherite.jpg" style="width:100%">
                 </div>
 
-                <div class="mySlides" id="slide10">
+                <div class="galleryslides" id="slide10">
                     <div class="numbertext">10 / 12</div>
                     <img class="lbImg" src="./images/technoblade/gallery/llamas_waifu2x_2x_3n_jpg.png"
                         style="width:100%">
                 </div>
 
-                <div class="mySlides" id="slide11">
+                <div class="galleryslides" id="slide11">
                     <div class="numbertext">11 / 12</div>
                     <img class="lbImg" src="./images/technoblade/gallery/ransom.jpg" style="width:100%">
                 </div>
 
-                <div class="mySlides" id="slide12">
+                <div class="galleryslides" id="slide12">
                     <div class="numbertext">12 / 12</div>
                     <img class="lbImg" src="./images/technoblade/gallery/sbi_waifu2x_2x_3n_jpg.png" style="width:100%">
                 </div>
@@ -457,7 +464,7 @@
 
                 <!-- Thumbnail image controls -->
                 <div class="column">
-                    <img class="demo" id="thumb1" src="./images/technoblade/gallery/thumbs/Technoblade.png"
+                    <img class="demo" id="thumb1" src="./images/technoblade/gallery/thumbs/technoblade.png"
                         onclick="currentSlide(1)" alt="Technoblade's YouTube icon">
                 </div>
 
@@ -520,69 +527,73 @@
     <div class="modal" id="trivia">
         <div id="triviaModal" onclick="insideClick('triviaTask');">
 
-            <header class="aboutContainer">
+            <header class="aboutcontainer">
                 <span onclick="document.getElementById('trivia').style.display='none'"
-                    class="minimizeAbt">&minus;</span>
+                    class="minimizeabt">&minus;</span>
                 <span class="vl"></span>
                 <span
                     onclick="chooseOption(event, 'triviaChoose', 'homeTab'); document.getElementById('trivia').style.display='none'; closeTask('triviaTask')"
-                    class="closeAbt">&times;</span>
-                <div class="abtTitle"><strong> Technoblade Trivia</strong></div>
+                    class="closeabout">&times;</span>
+                <div class="abttitle"><strong> Technoblade Trivia</strong></div>
             </header>
 
-            <div class="tabBar">
-                <button class="tablink barItem trivTabs" id="backHome"
+            <!--TRIVIA Tabs-->
+            <div class="tabbar">
+                <button class="tablink baritem triviatabs" id="backHome"
                     onclick="chooseOption(event, 'triviaChoose', 'homeTab')">&LessLess;</button>
-                <button class="tablink barItem trivTabs" id="homeTab"
+                <button class="tablink baritem triviatabs" id="homeTab"
                     onclick="chooseOption(event, 'triviaChoose', 'homeTab')">Home</button>
-                <button class="tablink barItem trivTabs" id="devTab">Real Life</button>
-                <button class="tablink barItem trivTabs" id="alphaTab">Non DSMP</button>
-                <button class="tablink barItem trivTabs" id="gameTab">DSMP OOC</button>
-                <button class="tablink barItem trivTabs" id="miscTab">DSMP</button>
+                <button class="tablink baritem triviatabs" id="devTab">Real Life</button>
+                <button class="tablink baritem triviatabs" id="alphaTab">Non DSMP</button>
+                <button class="tablink baritem triviatabs" id="gameTab">DSMP OOC</button>
+                <button class="tablink baritem triviatabs" id="miscTab">DSMP</button>
             </div>
 
-            <div class="selectTrivia" id="triviaChoose">
-                <div class="triviaRow">
-                    <div class="triviaBox" id="triviaDevelopment"
-                        ondblclick="chooseOption(event, 'trivDevTab', 'devTab')">
+            <!--TRIVIA Options-->
+
+            <div class="selecttrivia" id="triviaChoose">
+                <div class="triviarow">
+                    <div class="triviabox" id="triviaDevelopment"
+                        onclick="chooseOption(event, 'trivDevTab', 'devTab')">
                         Real Life</div>
-                    <div class="triviaBox" id="triviaAlpha"
-                        ondblclick="chooseOption(event, 'trivAlphaTab', 'alphaTab')">Non DSMP
+                    <div class="triviabox" id="triviaAlpha"
+                        onclick="chooseOption(event, 'trivAlphaTab', 'alphaTab')">Non DSMP
                     </div>
                 </div>
-                <div class="triviaRow">
+                <div class="triviarow">
 
-                    <div class="triviaBox" id="triviaGame" ondblclick="chooseOption(event, 'trivGameTab', 'gameTab')">
+                    <div class="triviabox" id="triviaGame" onclick="chooseOption(event, 'trivGameTab', 'gameTab')">
                         DSMP OOC</div>
-                    <div class="triviaBox" id="triviaMisc" ondblclick="chooseOption(event, 'trivMiscTab', 'miscTab')">
+                    <div class="triviabox" id="triviaMisc" onclick="chooseOption(event, 'trivMiscTab', 'miscTab')">
                         DSMP</div>
                 </div>
             </div>
 
-            <div class="selectTrivia" id="trivDevTab">
+            <!--TRIVIA Real life-->
+            <div class="selecttrivia" id="trivDevTab">
                 <h2>Real Life</h2>
 
                 <div>
                     <p>
-                        &SmallCircle;Technoblade had ADHD.
+                        &SmallCircle; technoblade had ADHD.
                     </p>
                     <p>
-                        &SmallCircle;He was an English major, but dropped out of college in order to pursue a career in
+                        &SmallCircle; He was an English major, but dropped out of college in order to pursue a career in
                         YouTube.
                     </p>
                     <p>
-                        &SmallCircle;Before creating the Technoblade channel, Technoblade had a channel called
+                        &SmallCircle; Before creating the Technoblade channel, Technoblade had a channel called
                         StudioLORE.
                         An even
                         older channel named Derp Squad has videos of him playing Minecraft with his brother.
                     </p>
-                    <span class="trivSideImage wideTriv rightTriv"><img
+                    <span class="trivsideimage widetriv righttriv"><img
                             src="./images/technoblade/gallery/Hot_elbow_waifu2x_2x_3n_png.png" alt="Elbow reveal"
                             height="150">
                         <p class="imgdescription">Elbow reveal</p>
                     </span>
                     <p>
-                        &SmallCircle;Technoblade has done an unofficial face reveal and has shown his face on video
+                        &SmallCircle;  Technoblade has done an unofficial face reveal and has shown his face on video
                         multiple
                         times, but
                         many people think he has not ever shown his face before and still request for a face reveal.
@@ -591,35 +602,35 @@
                     </p>
                 </div>
                 <div>
-                    <p>&SmallCircle;He claimed that he is 25% Greek, although he never knew his grandmother on the Greek
+                    <p>&SmallCircle; He claimed that he is 25% Greek, although he never knew his grandmother on the Greek
                         side.
                     </p>
 
                     <p>
-                        &SmallCircle;He has three younger sisters and a younger brother named Chris.
+                        &SmallCircle; He has three younger sisters and a younger brother named Chris.
                     </p>
 
 
                     <p>
-                        &SmallCircle; Technoblade released a video of his sister playing Survival Games in 2014.
+                        &SmallCircle;  Technoblade released a video of his sister playing Survival Games in 2014.
 
                     </p>
 
 
-                    <span class="trivSideImage wideTriv leftTriv"><img src="./images/technoblade/ph1lza wedding.jpg"
+                    <span class="trivsideimage widetriv lefttriv"><img src="./images/technoblade/ph1lza wedding.jpg"
                             alt="Elbow reveal" height="150">
                         <p class="imgdescription">Ph1lzas wedding</p>
                     </span>
                     <p>
-                        &SmallCircle;Technoblade is known for breaking the fourth wall to plug his channel during
+                        &SmallCircle; Technoblade is known for breaking the fourth wall to plug his channel during
                         important
                         events.
                     </p>
                     <p>
-                        &SmallCircle;According to Technoblade himself, he was an atheist.
+                        &SmallCircle; According to Technoblade himself, he was an atheist.
                     </p>
                     <p>
-                        &SmallCircle;Technoblade was invited to Philza's wedding but didn't attend due to participating
+                        &SmallCircle; Technoblade was invited to Philza's wedding but didn't attend due to participating
                         in
                         MCC.
                     </p>
@@ -627,32 +638,32 @@
 
                 </div>
                 <div>
-                    <span class="trivSideImage wideTriv rightTriv"><img src="./images/technoblade/gallery/sbi.jpg"
+                    <span class="trivsideimage widetriv righttriv"><img src="./images/technoblade/gallery/sbi.jpg"
                             alt="Elbow reveal" height="150">
                         <p class="imgdescription">Sleepy Bois Inc</p>
                     </span>
                     <p>
-                        &SmallCircle;He was part of the group Sleepy Bois Inc with Phil, Wilbur, and Tommy. In the
+                        &SmallCircle; He was part of the group Sleepy Bois Inc with Phil, Wilbur, and Tommy. In the
                         group,
                         Technoblade was
                         considered the "older brother" of the dynamic.
                     </p>
 
                     <p>
-                        &SmallCircle;His favorite color was blue.
+                        &SmallCircle; His favorite color was blue.
                     </p>
                     <p>
-                        &SmallCircle;His favorite Pokémon was Beldum.
+                        &SmallCircle; His favorite Pokémon was Beldum.
                     </p>
                     <p>
-                        &SmallCircle;Technoblade was diagnosed with cancer in his arm on August 2, 2021 and publicly
+                        &SmallCircle; Technoblade was diagnosed with cancer in his arm on August 2, 2021 and publicly
                         revealed his
                         diagnosis on August 27, 2021. He underwent surgery that removed almost all of his cancer in
                         December 2021. On June 30, 2022, his family released a video announcing that he had passed away
                         due to the cancer.
                     </p>
                     <p>
-                        &SmallCircle;As a response to the announcement, multiple content creators donated to cancer
+                        &SmallCircle; As a response to the announcement, multiple content creators donated to cancer
                         research
                         based on
                         their performance in MC Championship 16.
@@ -668,14 +679,14 @@
                     </p>
 
                     <p>
-                        &SmallCircle;Technoblade had 205 bones because one of his clavicles was removed during the
+                        &SmallCircle; Technoblade had 205 bones because one of his clavicles was removed during the
                         surgery
                         to remove his
                         tumor.
                     </p>
                 </div>
                 <div>
-                    &SmallCircle;Technoblade met Ph1LzA in person on October 19, 2021. He posted an image of Ph1LzA
+                    &SmallCircle; Technoblade met Ph1LzA in person on October 19, 2021. He posted an image of Ph1LzA
                     waving.
                     Technoblade met Wilbur Soot in person on February 9, 2022. He posted a picture of Wilbur on Twitter
                     with a description joking about Wilbur placing TNT under his house.
@@ -686,7 +697,7 @@
                 <div>
 
                     <p>
-                        &SmallCircle;When he was younger, Techno was taught basic sword and knife-fighting in a summer
+                        &SmallCircle; When he was younger, Techno was taught basic sword and knife-fighting in a summer
                         camp
                         with foam
                         weapons. He got disqualified from his summer camp’s dueling tournament because he would throw
@@ -697,7 +708,7 @@
                     </p>
 
                     <p>
-                        &SmallCircle;Technoblade was the third-place winner of MrBeast's Hide And Seek Across The Earth!
+                        &SmallCircle; Technoblade was the third-place winner of MrBeast's Hide And Seek Across The Earth!
                         competition. He
                         won a $5,000 refrigerator using a skin that camouflaged him with sand on the outer layer. He
                         also
@@ -706,14 +717,14 @@
                         Refrigerator."
                     </p>
                     <p>
-                        &SmallCircle;Technoblade initially did not want to do the $100,000 Duel against Dream and found
+                        &SmallCircle; Technoblade initially did not want to do the $100,000 Duel against Dream and found
                         the
                         idea
                         terrible. He was pressured into doing it after Dream and MrBeast tweeted about the duel
                         simultaneously.
                     </p>
                     <p>
-                        &SmallCircle;Technoblade reached ten million subscribers on YouTube on New Year's Eve 2021,
+                        &SmallCircle; Technoblade reached ten million subscribers on YouTube on New Year's Eve 2021,
                         completing a personal
                         goal he had set for himself. To help achieve this goal, Technoblade paid for advertisement time
                         on
@@ -721,7 +732,7 @@
                         subscribe to him
                     </p>
                     <p>
-                        &SmallCircle; In 2014, he wrote a Hypixel fanfiction called "Revolution - A Blitz Story" in the
+                        &SmallCircle;  In 2014, he wrote a Hypixel fanfiction called "Revolution - A Blitz Story" in the
                         Hypixel
                         forums, although all of his old forums posts are now deleted, including the fanfiction.
                     </p>
@@ -729,24 +740,26 @@
 
             </div>
 
-            <div class="selectTrivia" id="trivAlphaTab">
+            <!--TRIVIA Non DSMP-->
+
+            <div class="selecttrivia" id="trivAlphaTab">
                 <h2>Minecraft outside of DSMP</h2>
 
                 <div>
                     <div>
-                        <p>&SmallCircle;Technoblade was one of the players on SMPEarth and had history of fighting
+                        <p>&SmallCircle; Technoblade was one of the players on SMPEarth and had history of fighting
                             TommyInnit
                             in wars on the
                             server.
 
                         </p>
-                        <span class="trivSideImage wideTriv rightTriv"><img src="./images/technoblade/potato king.png"
+                        <span class="trivsideimage widetriv righttriv"><img src="./images/technoblade/potato king.png"
                                 alt="Potato King" height="150">
                             <p class="imgdescription">Technoblade, the Potato King</p>
                         </span>
 
 
-                        <p>&SmallCircle;On SMPEarth, Technoblade founded the Antarctic Empire in Antarctica,
+                        <p>&SmallCircle; On SMPEarth, Technoblade founded the Antarctic Empire in Antarctica,
                             choosing
                             Ph1LzA as
                             his
@@ -758,7 +771,7 @@
                             with
                             Business Bay, the faction owned by TommyInnit.
                         </p>
-                        <p>&SmallCircle;After the Great Potato War, Technoblade was put as an NPC in Hypixel
+                        <p>&SmallCircle; After the Great Potato War, Technoblade was put as an NPC in Hypixel
                             Skyblock
                             where
                             players could
@@ -767,17 +780,17 @@
 
                     </div>
                     <div>
-                        <p> &SmallCircle; In Technoblade's video "the quest for the [PIG] rank", he says that he
+                        <p> &SmallCircle;  In Technoblade's video "the quest for the [PIG] rank", he says that he
                             created
                             the channel for the sole purpose of being confident and getting 10 million subscribers.
 
                         </p>
-                        <p>&SmallCircle; Technoblade came up with the idea to have a uniquely
+                        <p>&SmallCircle;  Technoblade came up with the idea to have a uniquely
                             colored rank called the [PIG] rank. When he tweeted Hypixel how many subscribers he
                             would
                             need to acquire this rank, Hypixel responded with 10 million.
                         </p>
-                        <span class="trivSideImage wideTriv leftTriv"><img src="./images/technoblade/pigrank.png"
+                        <span class="trivsideimage widetriv lefttriv"><img src="./images/technoblade/pigrank.png"
                                 alt="Potato King" height="30">
                             <p class="imgdescription">PIG+++ rank</p>
                         </span>
@@ -796,12 +809,12 @@
                         </p>
                     </div>
                     <div>
-                        <span class="trivSideImage wideTriv rightTriv"><img src="./images/technoblade/Winstreak.webp"
+                        <span class="trivsideimage widetriv righttriv"><img src="./images/technoblade/Winstreak.webp"
                                 alt="Potato King" height="20">
                             <p class="imgdescription">Win streak</p>
                         </span>
                         <p>
-                            &SmallCircle;In 2019, Technoblade participated in Keemstar's Minecraft event, Minecraft
+                            &SmallCircle; In 2019, Technoblade participated in Keemstar's Minecraft event, Minecraft
                             Mondays, where
                             YouTubers and streamers would come together to play a wide variety of minigames, and the
                             prize
@@ -810,20 +823,22 @@
                             took
                             part in the minigame-based event with other popular YouTubers and/or streamers including
                             Skeppy,
-                            CaptainSparklez, Speedyw03, Vikkstar123, DanTDM, JeromeASF, jschlatt, MrBeast, Lachlan,
+                            CaptainSparklez, Speedyw03, Vikkstar123, DanTDM, JeromeASF, Jschlatt, MrBeast, Lachlan,
                             PewDiePie, James Charles, Ninja, LazarBeam and more.
                         </p>
                         <p>
-                            &SmallCircle;He holds the record for the longest BedWars killstreak.
+                            &SmallCircle; He holds the record for the longest BedWars killstreak.
                         </p>
                     </div>
                 </div>
 
             </div>
-            <div class="selectTrivia" id="trivGameTab">
+
+            <!--TRIVIA DSMP OOC-->
+            <div class="selecttrivia" id="trivGameTab">
                 <h2>DSMP OOC</h2>
                 <div>
-                    
+
                     <p>
                         &SmallCircle; Technoblade once joked about his brother Chris being whitelisted on the Dream SMP
                         and
@@ -834,13 +849,13 @@
 
                     </p>
                     <p>
-                        &SmallCircle;Technoblade was one of the writers of the Dream SMP after Wilbur Soot stepped down.
+                        &SmallCircle; Technoblade was one of the writers of the Dream SMP after Wilbur Soot stepped down.
                         Techno
                         specifically wrote the arc around his character.
                     </p>
 
                     <p>
-                        &SmallCircle;He had "leaked" a fake script on livestream as a joke directed at TommyInnit, who
+                        &SmallCircle; He had "leaked" a fake script on livestream as a joke directed at TommyInnit, who
                         had
                         done the same
                         with an actual script.
@@ -849,27 +864,27 @@
                 </div>
 
                 <div>
-                    <span class="trivSideImage wideTriv rightTriv"><img
-                        src="./images/technoblade/ph1lnoblade.avif" height="150"> <audio></audio>
-                    <p class="imgdescription">Phil and Techno</p>
-                </span>
-                
+                    <span class="trivsideimage widetriv righttriv"><img src="./images/technoblade/ph1lnoblade.png"
+                            height="150"> <audio></audio>
+                        <p class="imgdescription">Phil and Techno</p>
+                    </span>
+
 
                     <p>
-                        &SmallCircle; c!Technoblade is presumably in his late 20's, as stated by Wilbur, however at his
+                        &SmallCircle;  c!Technoblade is presumably in his late 20's, as stated by Wilbur, however at his
                         birthday party
                         he keep his age ambiguous.
 
                     </p>
                     <p>
-                        &SmallCircle; Although he and Technoblade are still "old friends," Philza has confirmed that the
+                        &SmallCircle;  Although he and Technoblade are still "old friends," Philza has confirmed that the
                         Antarctic
                         Empire lore is NOT linked to the Dream SMP, and is only a headcanon.
 
 
                     </p>
                     <p>
-                        &SmallCircle; It was previously thought to be canon that his father was Philza. However, when
+                        &SmallCircle;  It was previously thought to be canon that his father was Philza. However, when
                         asked on stream
                         he clarified that he does not recognize the family canon, as it's "weird" and makes his
                         backstabbing awkward. He has stated that he is fine with head-canons, but will not be acting out
@@ -879,43 +894,43 @@
 
                     </p>
 
-                    
+
 
                 </div>
             </div>
 
-
-            <div class="selectTrivia" id="trivMiscTab">
+            <!--TRIVIA DSMP-->
+            <div class="selecttrivia" id="trivMiscTab">
                 <h2>DSMP</h2>
                 <div>
-                    <span class="trivSideImage wideTriv rightTriv"><img
+                    <span class="trivsideimage widetriv righttriv"><img
                             src="./images/technoblade/Baby_Zombie_with_Jack_o'Lantern.webp"
                             alt="Zombie with Jack O'Lantern" height="150">
                         <p class="imgdescription">Zombie with Jack O'Lantern</p>
                     </span>
                     <p>
-                        &SmallCircle; In one stream, he started "memorizing" the layout of the entire server (mostly the
+                        &SmallCircle;  In one stream, he started "memorizing" the layout of the entire server (mostly the
                         areas/terrain that has buildings and landmarks near them) and is called "The Human GPS of the
                         server." This title used to be not fully correct, as he would often "spill his water" and use a
                         transition screen to look at the coordinates of his intended location, but he has since stopped
                         doing this and seems to actually have a good mental map of the layout of the server.
                     </p>
                     <p>
-                        &SmallCircle; Technoblade is the only known person to possess Jack 'o' Lantern wearing mobs on
+                        &SmallCircle;  Technoblade is the only known person to possess Jack 'o' Lantern wearing mobs on
                         the server. He
                         collected them during Halloween and seems to be proud of them.
                     </p>
                     <p>
-                        &SmallCircle; He canonized his chat, calling them the "voices in his head."
+                        &SmallCircle;  He canonized his chat, calling them the "voices in his head."
                     </p>
                 </div>
                 <div>
-                    <span class="trivSideImage wideTriv leftTriv"><img src="./images/technoblade/withers.webp"
-                            alt="Subscribe to Technoblade" height="70">
+                    <span class="trivsideimage widetriv lefttriv"><img src="./images/technoblade/withers.webp"
+                            alt="Subscribe to technoblade" height="70">
                         <p class="imgdescription">Wither name</p>
                     </span>
                     <p>
-                        &SmallCircle; During the battle against L'Manberg that occurred on November 16, he used one
+                        &SmallCircle;  During the battle against L'Manberg that occurred on November 16, he used one
                         of
                         the withers to
                         self-promote by naming it "Subscribe to Technoblade" with a name tag. He stated that this
@@ -923,23 +938,23 @@
                         the most important part.
                     </p>
                     <p>
-                        &SmallCircle; He has, at one point, stated that his hatred of orphans began when his parents
+                        &SmallCircle;  He has, at one point, stated that his hatred of orphans began when his parents
                         were brutally
                         murdered by a group of orphans. This seems to be the most likely backstory for Technoblade.
 
                     </p>
                     <p>
-                        &SmallCircle; According to Ghostbur's book, Wilbur and Techno used to spar when they were
+                        &SmallCircle;  According to Ghostbur's book, Wilbur and Techno used to spar when they were
                         kids.
                     </p>
                     <p>
-                        &SmallCircle; According to Technoblade, his second vault contained enough wither heads to
+                        &SmallCircle;  According to Technoblade, his second vault contained enough wither heads to
                         create
                         55
                         withers.
                     </p>
                     <p>
-                        &SmallCircle; The Butcher Army has put up many posters as propaganda against Technoblade
+                        &SmallCircle;  The Butcher Army has put up many posters as propaganda against Technoblade
                         around
                         the SMP, one
                         of which depicts im_a_squid_kid winning the potato war. This seems to imply that the potato
@@ -949,29 +964,29 @@
                 </div>
 
                 <div>
-                    <span class="trivSideImage wideTriv rightTriv"><img
+                    <span class="trivsideimage widetriv righttriv"><img
                             src="./images/technoblade/Channel_Member_Bell.webp" alt="Bell" height="150">
                         <p class="imgdescription">Sellout timer</p>
                     </span>
                     <p>
-                        &SmallCircle; It was said by Philza that he knew Techno since he was a kid, it might be implied
+                        &SmallCircle;  It was said by Philza that he knew Techno since he was a kid, it might be implied
                         that Philza
                         might have been Techno's mentor.
                     </p>
                     <p>
-                        &SmallCircle; Techno in character can perfectly keep track of time, and so can keep track of
+                        &SmallCircle;  Techno in character can perfectly keep track of time, and so can keep track of
                         when to ring his
                         sellout timer.
                     </p>
                     <p>
-                        &SmallCircle; Along with training in his spare time, Techno has stated he enjoys playing golf.
+                        &SmallCircle;  Along with training in his spare time, Techno has stated he enjoys playing golf.
                     </p>
                 </div>
             </div>
 
 
-            <footer class="aboutContainer">
-                <div class="abtTitle">&ThickSpace;</div>
+            <footer class="aboutcontainer">
+                <div class="abttitle">&ThickSpace;</div>
             </footer>
 
         </div>

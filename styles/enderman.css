@@ -19,7 +19,7 @@ html, body {
 }
 
 /*Desktop icons*/
-.desktopIcons {
+.desktopicons {
     display: flex;
     align-items: flex-start;
     justify-items: flex-start;
@@ -49,7 +49,7 @@ html, body {
 
 
 
-.iconImg {
+.iconimg {
     padding-top: 1px;
     padding-left: 1px;
     padding-right: 1px;
@@ -62,7 +62,7 @@ html, body {
     background-color: rgba(139, 139, 139, 0.171) !important;
 }
 
-.iconRow {
+.iconrow {
     display: flex;
     align-items: flex-start;
     justify-items: flex-start;
@@ -70,7 +70,7 @@ html, body {
     z-index: 4;
 }
 
-.iconText {
+.icontext {
     color: white;
     font-family: Arial;
     background-color: rgba(255, 255, 255, 0.199);
@@ -83,21 +83,29 @@ html, body {
 .taskbar {
     width: 100%;
     height: 40px;
-    background-color: blueviolet;
+    background-color: #7d3cdd;
     position: fixed;
     bottom: 0px;
     left: 0px;
 }
 
-.homeIcon {
+.homeicon {
     height: 90%;
     margin: 2px;
     margin-right: 10px;
     margin-left: 10px;
     transition: 0.2s;
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+/Edge */
+    user-select: none;
+    /* Standard */
 }
 
-#homeContainer {
+#homecontainer {
     width: 57px;
     border-right: 1px dashed #eeeeee;
 }
@@ -108,7 +116,7 @@ html, body {
     z-index: 7;
 }
 
-#tasksContainer {
+#taskscontainer {
     max-height: 100%;
     display: flex;
     flex-direction: row;
@@ -133,7 +141,7 @@ html, body {
 }
 
 
-#homeContainer:hover, .taskOpen:hover, #backToDesktop:hover {
+#homecontainer:hover, .taskOpen:hover, #backToDesktop:hover {
     background-color: rgb(160, 75, 240) !important;
 }
 
@@ -153,7 +161,7 @@ html, body {
 
 /*START MENU*/
 
-.startModal {
+.startmodal {
     overflow: auto;
     display: none;
     position: fixed;
@@ -181,7 +189,7 @@ html, body {
     flex-direction: column;
 }
 
-.startItem {
+.startitem {
     display: flex;
     flex-direction: row;
     max-height: 100px;
@@ -189,18 +197,18 @@ html, body {
     transition: 0.2s;
 }
 
-.startItem:hover {
+.startitem:hover {
     background-color: #302f2f;
 }
 
-.startImg {
+.startimg {
     max-height: 80%;
     padding: 15px;
     width: auto;
     aspect-ratio: 1;
 }
 
-.startText {
+.starttext {
     color: whitesmoke;
     margin: auto;
 }
@@ -264,7 +272,7 @@ html, body {
     height: 40px;
 }
 
-.lightboxContent {
+.lightboxcontent {
 
     position: relative;
     background-color: #363636;
@@ -335,7 +343,7 @@ html, body {
 }
 
 /* Hide the slides by default */
-.mySlides {
+.galleryslides {
     display: none;
 }
 
@@ -442,7 +450,7 @@ h5 {
     clear: both;
 }
 
-.aboutContainer {
+.aboutcontainer {
     padding: 0.01em 16px;
     color: #fff !important;
     background-color: #2e204e !important;
@@ -450,11 +458,11 @@ h5 {
 
 /*About modal buttons*/
 
-.abtTitle {
+.abttitle {
     padding: 8px;
 }
 
-.closeAbt {
+.closeabout {
     display: inline-block;
     padding: 8px 16px;
     vertical-align: middle;
@@ -469,7 +477,7 @@ h5 {
     top: 0;
 }
 
-.minimizeAbt {
+.minimizeabt {
     border: none;
     display: inline-block;
     padding: 8px 16px;
@@ -485,8 +493,8 @@ h5 {
     top: 0;
 }
 
-.closeAbt:hover,
-.closeAbt:focus, .minimizeAbt:hover, .minimizeAbt:focus, .minimize:hover, .minimize:focus, .close:hover,
+.closeabout:hover,
+.closeabout:focus, .minimizeabt:hover, .minimizeabt:focus, .minimize:hover, .minimize:focus, .close:hover,
 .close:focus {
     color: #999;
     text-decoration: none;
@@ -506,7 +514,7 @@ h5 {
 
 /*TAB BAR*/
 
-.tabBar {
+.tabbar {
     width: 100%;
     overflow: hidden;
     border-bottom: 1px solid rgb(53, 53, 53) !important;
@@ -514,7 +522,7 @@ h5 {
     background-color: #222222;
 }
 
-.barItem {
+.baritem {
     padding: 8px 16px;
     float: left;
     width: auto;
@@ -529,7 +537,7 @@ h5 {
 }
 
 
-.abtTabs {
+.abouttabs {
     border: none;
     display: inline-block;
     padding: 8px 16px;
@@ -543,7 +551,7 @@ h5 {
     white-space: nowrap
 }
 
-.abtTabs:hover {
+.abouttabs:hover {
     color: #000 !important;
     background-color: rgb(152, 108, 182) !important;
 }
@@ -557,7 +565,7 @@ h5 {
 
 /*ABOUT CONTENT - BASIC INFO*/
 
-.tabArea {
+.tabarea {
     background-color: #999;
     border-left: 1px ridge #2e204e;
     height: 310px;
@@ -574,7 +582,7 @@ h5 {
     background-color: #252525 !important;
 }
 
-.abtTable {
+.abttable {
     margin: 5px;
     display: flex;
     flex-direction: column;
@@ -607,14 +615,14 @@ table tr td:last-child {
     border-right: 0;
 }
 
-.abtImage {
+.abtimage {
     height: 150px;
     width: auto;
     padding: 10px;
     border-bottom: 1px ridge #e0dee4;
 }
 
-.enderInfo {
+.enderinfo {
     color: #e0dee4 !important;
 }
 
@@ -680,7 +688,7 @@ p {
 
 
 
-.biomeText, .audioText {
+.biometext, .audiotext {
     font-size: 16px;
     font-weight: bold;
     width: 100%;
@@ -689,14 +697,14 @@ p {
     font-family: Verdana, sans-serif !important;
 }
 
-.biomeRow {
+.biomerow {
     display: flex;
     flex-direction: row;
     width: 100%;
 
 }
 
-.biomeImg {
+.biomeimg {
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
@@ -705,13 +713,13 @@ p {
     flex: 1 1 0;
 }
 
-.biomeImg:hover {
+.biomeimg:hover {
     opacity: 0.7;
     border-radius: 1px;
 }
 
 /* The Modal (background) */
-.biomeGallery {
+.biomegallery {
     display: none;
     /* Hidden by default */
     position: fixed;
@@ -775,7 +783,7 @@ p {
 }
 
 /* The Close Button */
-.closeBiome {
+.closebiome {
     position: absolute;
     top: 10px;
     right: 30px;
@@ -785,8 +793,8 @@ p {
     transition: 0.3s;
 }
 
-.closeBiome:hover,
-.closeBiome:focus {
+.closebiome:hover,
+.closebiome:focus {
     color: #bbb;
     text-decoration: none;
     cursor: pointer;
@@ -811,14 +819,14 @@ p {
     overflow: auto;
 }
 
-.audioRow {
+.audiorow {
     display: flex;
     flex-direction: row;
     flex: 1 1 0;
     width: 100%;
 }
 
-.iconAudio {
+.iconaudio {
     margin: auto;
     padding-top: 2px;
     padding-left: 2px;
@@ -827,14 +835,14 @@ p {
 
 }
 
-.audioContainer {
+.audiocontainer {
     display: block;
     width: 100%;
     padding: auto;
     text-align: center;
 }
 
-.audioPlayer {
+.audioplayer {
     display: none;
     background-color: #161616;
     height: 100px;
@@ -891,7 +899,7 @@ p {
     color: whitesmoke;
 }
 
-.trivTabs:hover {
+.triviatabs:hover {
     color: #000 !important;
     background-color: rgb(152, 108, 182) !important;
 }
@@ -937,7 +945,7 @@ p {
     overflow-y: auto;
 }
 
-.triviaRow {
+.triviarow {
     margin: auto;
     display: flex;
     flex-direction: row;
@@ -945,7 +953,7 @@ p {
     margin-bottom: 10px;
 }
 
-.triviaBox {
+.triviabox {
     margin: auto;
     height: 150px;
     width: auto;
@@ -957,7 +965,7 @@ p {
     font-size: 20px;
 }
 
-.triviaBox:hover {
+.triviabox:hover {
     background-color: #774c79;
 }
 
@@ -984,7 +992,7 @@ p {
     word-wrap: break-word;
 }
 
-.trivImage {
+.triviaimg {
     margin: auto;
     float: left;
     text-align: center !important;
@@ -993,7 +1001,7 @@ p {
     flex: 1 1 0;
 }
 
-.dblImgContainer {
+.doubleimagecontainer {
     background-color: #161616;
     color: #ccc;
     width: 100%;
@@ -1004,7 +1012,7 @@ p {
     text-align: center;
 }
 
-.trivDblImg {
+.triviadoubleimage {
     display: flex;
     flex-direction: row;
     margin: auto;
@@ -1014,7 +1022,7 @@ p {
     padding: 1px;
 }
 
-.trivSideImage {
+.trivsideimage {
     margin: 20px;
     padding: 5px !important;
     background-color: #161616;
@@ -1022,25 +1030,25 @@ p {
     width: auto;
 }
 
-.wideTriv {
+.widetriv {
     margin: 5px;
     max-height: 200px !important;
     max-width: 300px;
     text-align: center !important;
 }
 
-.narrowTriv {
+.narrowtriv {
     margin: 5px;
     max-width: 200px;
     text-align: center !important;
 }
 
-.leftTriv {
+.lefttriv {
     float: left;
     margin-right: 20px !important;
 }
 
-.rightTriv {
+.righttriv {
     float: right;
     margin-left: 20px !important;
 }
@@ -1070,23 +1078,99 @@ p {
     background: #555;
 }
 
-/*TECHNOBLADE*/
+/*technoblade*/
 
-#technoBlade {
+#technoblade {
     position: absolute;
     bottom: 50px;
     right: 0px;
 }
 
-.technoIcon {
+.technoicon {
     margin: 5px;
     padding-top: 2px;
     padding-left: 2px;
     padding-right: 2px;
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+/Edge */
+    user-select: none;
+    /* Standard */
 }
 
 
-.technoIcon:hover {
+.technoicon:hover {
     cursor: pointer !important;
     background-color: rgba(139, 139, 139, 0.171) !important;
+}
+
+#technoselect {
+    top: 20% !important;
+}
+
+#technoModal {
+    margin: auto;
+    position: relative;
+    padding: 0;
+    outline: 0;
+    width: 300px;
+    text-align: center;
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+/Edge */
+    user-select: none;
+    /* Standard */
+}
+
+.technocontainer {
+    padding: 0.01em 16px;
+    color: #fff !important;
+    background-color: #e65f66 !important;
+}
+
+#technobuttoncontainer {
+    display: flex;
+    width: 93%;
+    padding: 10px;
+    flex: 1 1 0;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#technocontent {
+    overflow: hidden;
+    overflow-x: hidden;
+}
+
+.technobutton {
+    display: block;
+    width: 100px;
+    height: 30px;
+    background-color: rgb(242, 97, 97);
+    color: whitesmoke;
+    font-size: 10px;
+    margin: 10px;
+    text-decoration: none;
+}
+
+.technobutton:hover{
+    background-color: rgb(232, 84, 84);
+}
+
+.technoarea {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: whitesmoke;
+    background-color: rgb(234, 157, 171);
+    max-width: auto;
+    overflow: hidden;
+    flex: 1 1 0;
+    padding: 10px;
 }

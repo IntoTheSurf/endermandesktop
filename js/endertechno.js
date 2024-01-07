@@ -86,7 +86,7 @@ function currentSlide(n) {
 
 function showSlides(n) {
   var i;
-  var slides = document.getElementsByClassName("mySlides");
+  var slides = document.getElementsByClassName("galleryslides");
   var dots = document.getElementsByClassName("demo");
   var captionText = document.getElementById("caption2");
   if (n > slides.length) { slideIndex = 1 }
@@ -104,29 +104,29 @@ function showSlides(n) {
 
 document.getElementsByClassName("tablink")[0].click();
 
-function openCity(evt, cityName) {
-  var i, x, abtTabs;
-  x = document.getElementsByClassName("selectTab");
+function changeTab(evt, cityName) {
+  var i, x, abouttabs;
+  x = document.getElementsByClassName("selecttab");
   for (i = 0; i < x.length; i++) {
     x[i].style.display = "none";
   }
-  abtTabs = document.getElementsByClassName("abtTabs");
+  abouttabs = document.getElementsByClassName("abouttabs");
   for (i = 0; i < x.length; i++) {
-    abtTabs[i].style.backgroundColor = "#222222";
+    abouttabs[i].style.backgroundColor = "#222222";
   }
   document.getElementById(cityName).style.display = "flex";
   evt.currentTarget.style.backgroundColor = "#835285";
 }
 
 function closeCity(evt, cityName) {
-  var i, x, abtTabs;
-  x = document.getElementsByClassName("selectTab");
+  var i, x, abouttabs;
+  x = document.getElementsByClassName("selecttab");
   for (i = 0; i < x.length; i++) {
     x[i].style.display = "none";
   }
-  abtTabs = document.getElementsByClassName("abtTabs");
+  abouttabs = document.getElementsByClassName("abouttabs");
   for (i = 0; i < x.length; i++) {
-    abtTabs[i].style.backgroundColor = "#222222";
+    abouttabs[i].style.backgroundColor = "#222222";
   }
   document.getElementById(cityName).style.display = "flex";
   document.getElementById('firstTab').style.backgroundColor = "#835285";
@@ -138,7 +138,7 @@ var modal = document.getElementById("biomeModal");
 
 // Get the image and insert it inside the modal - use its "alt" text as a caption
 
-function openBiomeImg(x) {
+function openbiomeimg(x) {
 
   var img = document.getElementById("biome" + x);
   var modalImg = document.getElementById("img01");
@@ -149,7 +149,7 @@ function openBiomeImg(x) {
 }
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("closeBiome")[0];
+var span = document.getElementsByClassName("closebiome")[0];
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function () {
@@ -187,16 +187,16 @@ function stopAudio(i) {
 document.getElementsByClassName("tablink")[0].click();
 
 function chooseOption(evt, cityName, tabName) {
-  var i, x, trivTabs;
-  x = document.getElementsByClassName("selectTrivia");
+  var i, x, triviatabs;
+  x = document.getElementsByClassName("selecttrivia");
   for (i = 0; i < x.length; i++) {
     x[i].style.display = "none";
   }
-  trivTabs = document.getElementsByClassName("trivTabs");
+  triviatabs = document.getElementsByClassName("triviatabs");
   for (i = 0; i < x.length + 1; i++) {
 
-    trivTabs[i].style.display = "none";
-    trivTabs[i].style.backgroundColor = "#222222";
+    triviatabs[i].style.display = "none";
+    triviatabs[i].style.backgroundColor = "#222222";
   }
 
   document.getElementById('backHome').style.display = "inline-block";
@@ -223,8 +223,8 @@ function chooseOption(evt, cityName, tabName) {
 
 let a = 0, g = 0, t = 0;
 function openTask(i) {
-  /*var container = document.getElementById('tasksContainer');*/
-  const container = document.querySelector('#tasksContainer');
+  /*var container = document.getElementById('taskscontainer');*/
+  const container = document.querySelector('#taskscontainer');
 
   // Using insertAdjacentHTML to add the HTML before the two element
 
@@ -282,15 +282,15 @@ function closeTask(i) {
   const element = document.getElementById(i);
   if (i == 'aboutTask') {
     a--;
-    document.getElementById(i).style.backgroundColor = 'blueviolet';
+    document.getElementById(i).style.backgroundColor = '#7d3cdd';
   }
   else if (i == 'galleryTask') {
     g--;
-    document.getElementById(i).style.backgroundColor = 'blueviolet';
+    document.getElementById(i).style.backgroundColor = '#7d3cdd';
   }
   if (i == 'triviaTask') {
     t--;
-    document.getElementById(i).style.backgroundColor = 'blueviolet';
+    document.getElementById(i).style.backgroundColor = '#7d3cdd';
   }
   element.remove();
 }
@@ -304,12 +304,12 @@ function switchTasks(i) {
     }
     var gTask = document.getElementById("galleryTask");
     if (gTask) {
-      document.getElementById('galleryTask').style.backgroundColor = 'blueviolet';
+      document.getElementById('galleryTask').style.backgroundColor = '#7d3cdd';
       document.getElementById('gallery').style.zIndex = 2;
     }
     var trTask = document.getElementById("triviaTask");
     if (trTask) {
-      document.getElementById('triviaTask').style.backgroundColor = 'blueviolet';
+      document.getElementById('triviaTask').style.backgroundColor = '#7d3cdd';
       document.getElementById('trivia').style.zIndex = 2;
     }
 
@@ -317,7 +317,7 @@ function switchTasks(i) {
   else if (i == 1) {
     var abTask = document.getElementById("aboutTask");
     if (abTask) {
-      document.getElementById('aboutTask').style.backgroundColor = 'blueviolet';
+      document.getElementById('aboutTask').style.backgroundColor = '#7d3cdd';
       document.getElementById('about').style.zIndex = 2;
     }
     var gTask = document.getElementById("galleryTask");
@@ -327,19 +327,19 @@ function switchTasks(i) {
     }
     var trTask = document.getElementById("triviaTask");
     if (trTask) {
-      document.getElementById('triviaTask').style.backgroundColor = 'blueviolet';
+      document.getElementById('triviaTask').style.backgroundColor = '#7d3cdd';
       document.getElementById('trivia').style.zIndex = 2;
     }
   }
   else if (i == 2) {
     var abTask = document.getElementById("aboutTask");
     if (abTask) {
-      document.getElementById('aboutTask').style.backgroundColor = 'blueviolet';
+      document.getElementById('aboutTask').style.backgroundColor = '#7d3cdd';
       document.getElementById('about').style.zIndex = 2;
     }
     var gTask = document.getElementById("galleryTask");
     if (gTask) {
-      document.getElementById('galleryTask').style.backgroundColor = 'blueviolet';
+      document.getElementById('galleryTask').style.backgroundColor = '#7d3cdd';
       document.getElementById('gallery').style.zIndex = 2;
     }
     var trTask = document.getElementById("triviaTask");
@@ -355,7 +355,7 @@ var startVar = 0;
 function closeStart() {
   startVar = 0;
   document.getElementById('start').style.display = 'none';
-  document.getElementById('homeContainer').style.backgroundColor = 'blueviolet';
+  document.getElementById('homecontainer').style.backgroundColor = '#7d3cdd';
 
 }
 
@@ -373,15 +373,15 @@ function outsideClick() {
 
 
   if (abtTask) {
-    document.getElementById('aboutTask').style.backgroundColor = 'blueviolet';
+    document.getElementById('aboutTask').style.backgroundColor = '#7d3cdd';
   }
 
   if (gaTask) {
-    document.getElementById('galleryTask').style.backgroundColor = 'blueviolet';
+    document.getElementById('galleryTask').style.backgroundColor = '#7d3cdd';
   }
 
   if (triTask) {
-    document.getElementById('triviaTask').style.backgroundColor = 'blueviolet';
+    document.getElementById('triviaTask').style.backgroundColor = '#7d3cdd';
   }
 }
 
@@ -404,7 +404,7 @@ document.addEventListener('click', function (event) {
   } else {
     let trTask = document.getElementById("triviaTask");
     if (trTask) {
-      document.getElementById('triviaTask').style.backgroundColor = 'blueviolet';
+      document.getElementById('triviaTask').style.backgroundColor = '#7d3cdd';
     }
 
   }
@@ -412,7 +412,7 @@ document.addEventListener('click', function (event) {
   if (document.getElementById("trivia").style.display == "none") {
     let trTask = document.getElementById("triviaTask");
     if (trTask) {
-      document.getElementById('triviaTask').style.backgroundColor = 'blueviolet';
+      document.getElementById('triviaTask').style.backgroundColor = '#7d3cdd';
     }
 
   }
@@ -424,14 +424,14 @@ document.addEventListener('click', function (event) {
   } else {
     let trTask = document.getElementById("aboutTask");
     if (trTask) {
-      document.getElementById('aboutTask').style.backgroundColor = 'blueviolet';
+      document.getElementById('aboutTask').style.backgroundColor = '#7d3cdd';
     }
   }
 
   if (document.getElementById("about").style.display == "none") {
     let trTask = document.getElementById("aboutTask");
     if (trTask) {
-      document.getElementById('aboutTask').style.backgroundColor = 'blueviolet';
+      document.getElementById('aboutTask').style.backgroundColor = '#7d3cdd';
     }
 
   }
@@ -444,14 +444,14 @@ document.addEventListener('click', function (event) {
   } else {
     let trTask = document.getElementById("galleryTask");
     if (trTask) {
-      document.getElementById('galleryTask').style.backgroundColor = 'blueviolet';
+      document.getElementById('galleryTask').style.backgroundColor = '#7d3cdd';
     }
 
   }
   if (document.getElementById("gallery").style.display == "none") {
     let trTask = document.getElementById("galleryTask");
     if (trTask) {
-      document.getElementById('galleryTask').style.backgroundColor = 'blueviolet';
+      document.getElementById('galleryTask').style.backgroundColor = '#7d3cdd';
     }
 
   }
@@ -501,7 +501,7 @@ document.addEventListener('click', function (event) {
 
 
 
-  specifiedElement = document.getElementById('homeContainer');
+  specifiedElement = document.getElementById('homecontainer');
   isClickInside = specifiedElement.contains(event.target);
   var specifiedElement2 = document.getElementById('start');
   var isClickInside2 = specifiedElement2.contains(event.target);
@@ -511,19 +511,19 @@ document.addEventListener('click', function (event) {
     if (home.style.display == 'block') {
 
       document.getElementById('start').style.display = 'none';
-      document.getElementById('homeContainer').style.backgroundColor = 'blueviolet';
+      document.getElementById('homecontainer').style.backgroundColor = '#7d3cdd';
       startVar = 0;
 
     }
   } else if (isClickInside) {
     if (startVar == 0) {
       document.getElementById('start').style.display = 'block';
-      document.getElementById('homeContainer').style.backgroundColor = 'rgb(160, 75, 240)';
+      document.getElementById('homecontainer').style.backgroundColor = 'rgb(160, 75, 240)';
       startVar++;
     }
     else {
       document.getElementById('start').style.display = 'none';
-      document.getElementById('homeContainer').style.backgroundColor = 'blueviolet';
+      document.getElementById('homecontainer').style.backgroundColor = '#7d3cdd';
       startVar--;
     }
 
@@ -537,7 +537,7 @@ function minimizeEverything(){
   document.getElementById('trivia').style.display='none';
 }
 
-/*TECHNOBLADE*/
+/*technoblade*/
 
 function changeTechno(){
   document.getElementById('technoImg').src="./images/technoblade/technoblade-sit-min-d5ar_780x.webp";

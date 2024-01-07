@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minecraft Speedbridging</title>
+  <script type='text/javascript'>
+    title = "Minecraft Speedbridging --- ";
+    position = 0;
+    function scrolltitle() {
+      document.title = title.substring(position, title.length) + title.substring(0, position);
+      position++;
+      if (position > title.length) position = 0;
+      titleScroll = window.setTimeout(scrolltitle, 300);
+    }
+    scrolltitle();
+  </script>
+  <link rel="stylesheet" type="text/css" href="./styles/style.css" />
+  <link rel="icon" href="mc.png">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous" />
+</head>
+
+<body>
+  <div id="wrapper">
+
+    <!---HEADER--->
+    <header>
+      <div class="container flex-container">
+        <h2><a href="./index.html" style="text-decoration: none">Bridging</a></h2>
+        <nav class="navbar">
+          <div class="dropdown" id="simple">
+            <button class="dropbtn">Simple
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="./ninja.html">Ninja</a>
+              <a href="./breezily.html">Breezily</a>
+              <a href="./witchly.html">Witchly</a>
+            </div>
+          </div>
+          <div class="dropdown" id="advanced">
+            <button class="dropbtn">Advanced
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="./godbridge.html">Godbridge</a>
+              <a href="./others.html">Others</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+
+
+    <section id="cover" class="section-box">
+      <div id="bg-gradient"></div>
+      <div id="cover-text" class="container">
+        <h1 id="covertext">
+          MINECRAFT SPEEDBRIDGING
+        </h1>
+      </div>
+    </section>
+
+    <section>
+      <div class="introduction">
+        <p>
+        <h1>Minecraft Speedbridging Methods</h1>
+        This site is a comprehensive guide to some of the most useful methods you can use to speedbridge in Minecraft
+
+        .</p>
+      </div>
+    </section>
+
+    <!--card one: basics-->
+    <div class="cards">
+      <div class="cardsub cardstxtbox">
+        <div class="cardstxt">
+          <h1>Ninjabridging</h1>
+          <p>
+            Learn the basics of speedbridging!
+          </p>
+        </div>
+      </div>
+      <div class="cardsub cardsimg" id="cardimgr1">
+
+      </div>
+    </div>
+
+    <!--card two: simple-->
+    <div class="cards">
+      <div class="cardsub cardsimg" id="cardimgl">
+
+      </div>
+      <div class="cardsub cardstxtbox">
+        <div class="cardstxt">
+          <h1>Breezily</h1>
+          <p>
+            One of the more complex and most used methods
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!--card three: advanced methods-->
+
+    <div class="cards">
+      <div class="cardsub cardstxtbox">
+        <div class="cardstxt">
+          <h1>Godbridging</h1>
+          <p>
+            The easiest and most popular advanced method
+          </p>
+        </div>
+      </div>
+      <div class="cardsub cardsimg" id="cardimgr2">
+      </div>
+    </div>
+
+    <!--Beginner tips-->
+
+    <section class="instructions" id="moretips">
+      <h2>Before you begin: </h2>
+      <p id="instructionslist">
+        <b class="num">1.</b> Learn clicking methods: normal, butterfly, jitter, dragclick
+        </br><b class="num">a)</b> Normal clicking: clicking normally with one finger
+        </br><b class="num">b)</b> Butterfly clicking: clicking on your mouse with two fingers, in quick sequence
+        </br><b class="num">c)</b> Jitter clicking: holding your hand in place and tensing it up so it shivers.
+        Dangerous in the longrun, and not recommended.
+        </br><b class="num">d)</b> Dragclick: dragging your finger over your mouse in such a way that it creates
+        friction and causes a lot of clicks in a row. Wears out the mouse, and requires one with a low cooldown and bad
+        switches
+        </br><b class="num">2.</b> Clicking methods are easier to do if your mouse is capable of doubleclicking.
+        Clicking on your mouse a certain way should cause it to click two or three times in a row instead of one. This
+        is extremely common with cheaper switches
+        </br><b class="num">3.</b> CPS (clicks-per-second) are important, but so is precision. You can be good at
+        bridging with 1cps, and bad at it with 20cps. A higher cps isnt necessary as Hypixeč doesnt register CPS above a
+        certain number, and even then precision and practice is much more important. 10-12 CPS is more than enough
+      </br><b class="num">4.</b> You can practice by making your own creative world (unlimited blocks), or in certain public Minecraft servers
+        
+      </section>
+    <!-- Footer: contact, copyright, secret -->
+    <footer>
+      <div id="footerbox" class="container">
+        <ul id="socmedlist">
+          <li title="Twitter">
+            <a class="socmedlinks" href="https://www.twitter.com/" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li title="Instagram">
+            <a class="socmedlinks" href="https://www.instagram.com/" target="_blank">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </li>
+          <li title="Email">
+            <a class="socmedlinks" href="mailto:myemail@fesb.hr">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </li>
+          <li title="Hypixel">
+            <a class="socmedlinks" href="https://hypixel.net/">
+              <img id="hypixel" src="images/hypixel.png" alt="hypixel">
+            </a>
+          </li>
+        </ul>
+        <p id="copyright">
+          2022, Minecraft&trade; is a property of Mojang. <br />
+          <strong>Site by: Demi Pavišić</strong>
+        </p>
+      </div>
+      <img src="./images/Enderman.png" alt="A friendly Enderman. Click?" height="100" id="endImg" onclick="showEnder()">
+    </footer>
+  </div>
+  <script src="./js/endertechno.js"></script>
+</body>
+
+</html>
