@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Endermen</title>
+    <script type='text/javascript'>
+        title = "Endermen --- ";
+        position = 0;
+        function scrolltitle() {
+            document.title = title.substring(position, title.length) + title.substring(0, position);
+            position++;
+            if (position > title.length) position = 0;
+            titleScroll = window.setTimeout(scrolltitle, 300);
+        }
+        scrolltitle();
+    </script>
+    <link rel="stylesheet" type="text/css" href="./styles/enderman.css" />
+
+    <link rel="icon" href="mc.png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous" />
+
+</head>
+
+<body>
+
+    <div class="desktop" id="desktop">
+        <div class="desktopIcons">
+            <div class="iconRow" id="row1">
+                <div class="icon" onclick="outsideClick(); this.style.backgroundColor='rgba(139, 139, 139, 0.171)';"
+                    ondblclick="this.style.backgroundColor='rgba(139, 139, 139, 0.0)'">
+                    <img class="iconImg" src="./images/icons/enderAbout.webp" alt="icon 1" id="icon1" width="60" height="60"
+                        ondblclick="document.getElementById('about').style.display='block'; openTask(0); this.style.backgroundColor='rgba(139, 139, 139, 0.0)'; document.getElementById('aboutTask').style.backgroundColor = 'rgb(174, 99, 243)';">
+                    <p class="iconText">About</p>
+                </div>
+                <div class="icon" onclick="outsideClick(); this.style.backgroundColor='rgba(139, 139, 139, 0.171)';"
+                    ondblclick="this.style.backgroundColor='rgba(139, 139, 139, 0.0)'">
+                    <img class="iconImg" src="./images/icons/enderGallery.webp"  alt="icon 2" id="icon2" width="60" height="60"
+                        ondblclick="openModal(); openTask(1); document.getElementById('galleryTask').style.backgroundColor = 'rgb(174, 99, 243)';">
+                    <p class="iconText">Gallery</p>
+                </div>
+                <div class="icon" onclick="outsideClick(); this.style.backgroundColor='rgba(139, 139, 139, 0.171)'"
+                    ondblclick="this.style.backgroundColor='rgba(139, 139, 139, 0.0)'">
+                    <img class="iconImg" src="./images/icons/enderTrivia.webp" alt="icon 3" id="icon3" width="60" height="60"
+                        ondblclick="document.getElementById('trivia').style.display='block'; openTask(2), document.getElementById('triviaTask').style.backgroundColor = 'rgb(174, 99, 243)';">
+                    <p class="iconText">Trivia</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="taskbar">
+
+            <div id="homeContainer">
+                <img src="./mc.png" alt="home" class="homeIcon">
+            </div>
+            <div id="tasksContainer">
+
+            </div>
+            <div id="backToDesktop" onclick="minimizeEverything();">
+
+            </div>
+        </div>
+
+        <div id="technoBlade" onclick="changeTechno();">
+            <div class="technoIcon" ondblclick=" ">
+                <img class="iconImg" id="technoImg" src="./images/technoblade/technoblade-flop-min-nmlh.webp" alt="icon 3" id="icon3" width="75" height="auto">
+            </div>
+        </div>
+    </div>
+
+    <!--START Modal-->
+
+    <!-- The Modal -->
+    <div id="start" class="startModal">
+
+        <!-- Modal content -->
+        <div class="startContent">
+            <div id="startMenu">
+                <div class="startItem"
+                    onclick="document.getElementById('about').style.display='block'; openTask(0); closeStart();">
+                    <img class="startImg" src="./images/icons/enderAbout.webp" width="60" height="60">
+                    <p class="startText">About</p>
+                </div>
+                <div class="startItem" onclick="openModal(); openTask(1); closeStart();">
+                    <img class="startImg" src="./images/icons/enderGallery.webp" width="60" height="60">
+                    <p class="startText">Gallery</p>
+                </div>
+                <div class="startItem"
+                    onclick="document.getElementById('trivia').style.display='block'; openTask(2); closeStart();">
+                    <img class="startImg" src="./images/icons/enderTrivia.webp" width="60" height="60">
+                    <p class="startText">Trivia</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!--ABOUT Modal-->
+    <div class="modal" id="about">
+        <div id="aboutModal">
+            <header class="aboutContainer">
+                <span onclick="document.getElementById('about').style.display='none'" class="minimizeAbt">&minus;</span>
+                <span class="vl"></span>
+                <span
+                    onclick="document.getElementById('about').style.display='none'; closeCity(event, 'aboutContent'); closeTask('aboutTask')"
+                    class="closeAbt">&times;</span>
+                <div class="abtTitle"><strong> About Endermen</strong></div>
+            </header>
+            <div class="tabBar">
+                <button class="tablink barItem abtTabs" id="firstTab"
+                    onclick="openCity(event, 'aboutContent')">About</button>
+                <button class="tablink barItem abtTabs" onclick="openCity(event, 'abtBehaviour')">Behaviour</button>
+                <button class="tablink barItem abtTabs" onclick="openCity(event, 'abtGallery')">Locations</button>
+                <button class="tablink barItem abtTabs" onclick="openCity(event, 'audioSFX')">Sound effects</button>
+            </div>
+            <div class="selectTab" id="aboutContent">
+                <div class="tabArea" id="profile">
+                    <div class="abtTable">
+                        <div class="abtImage">
+                            <img class="enderImg" src="./images/wildender.webp" alt="A calm Enderman" width="150">
+                        </div>
+                        <div class="enderInfo">
+                            <table>
+                                <tr>
+                                    <td>Species</td>
+                                    <td>Enderman</td>
+                                </tr>
+                                <tr>
+                                    <td>Colour</td>
+                                    <td>black</td>
+                                </tr>
+                                <tr>
+                                    <td>Health</td>
+                                    <td>40♥ × 20</td>
+                                </tr>
+                                <tr>
+                                    <td>Behavior</td>
+                                    <td>Neutral</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="3">Attack strength:</td>
+                                    <td class="nbr">
+                                        Easy: 4.5♥ × 2.25;
+                                </tr>
+                                <tr>
+                                    <td class="nbr">
+                                        Normal: 7♥♥♥♥
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="nbr">
+                                        Hard: 10.5♥ × 5.25</td>
+                                    </td>
+                                </tr>
+                                </tr>
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="tabArea" id="descText">
+                    <h2>About</h2>
+                    <p>
+                        An enderman is a neutral mob found in all three dimensions.
+                        Endermen can teleport and pick up blocks.
+                    </p>
+                    <p>
+                        Endermen can spawn on any solid surface that has at least three empty spaces above,
+                        at the light level of 0 in the Overworld and the End, or a light level of 11 or less in the
+                        Nether.
+                        They are the only mob that spawns in all 3 dimensions.
+                    </p>
+                    <p>
+                        An enderman can be provoked by a player or other mob attacking them.
+                        They can also be provoked by a player looking them in the eyes from up to 64 blocks then looking
+                        away.
+                        Endermen open their mouths and begin to shake angrily if provoked;
+                        they also make loud and lengthy sounds while being stared at.
+                    </p>
+                </div>
+            </div>
+            <div class="selectTab" id="abtBehaviour">
+                <div>
+                    <h2>
+                        Hostile
+                    </h2>
+                    <span class="abtsideimage" id="hostile"><img src="./images/Enderman_Screaming.webp"
+                            alt="Hostile Enderman" height="150">
+                        <p class="imgdescription">Hostile Enderman</p>
+                    </span>
+                    <p>
+                        An enderman can be provoked by a player or other mob attacking them.
+                        They can also be provoked by a player looking them in the eyes from up to 64 blocks then looking
+                        away.
+                        Endermen open their mouths and begin to shake angrily if provoked; they also make loud and
+                        lengthy
+                        sounds while being stared at.
+                        If the player continues to maintain eye contact, the enderman does not move, although it may
+                        teleport away.
+                        Once the player stops looking at the enderman, it runs toward the back of the player to attack,
+                        although it ceases if hit by another player or mob.[2] An aggravated enderman runs fast and
+                        often
+                        teleports to the location of a player or mob up to 32 blocks away (orthogonally).
+                        Endermen are not provoked by a player viewing it through a transparent block or while wearing a
+                        carved pumpkin.
+                    </p>
+                    <p>
+                        An aggravated enderman pursues the player until it is either killed or distracted by external
+                        elements, such as rain or fire.
+                        They do not take damage from sunlight like undead mobs, but teleport randomly around until
+                        finding a
+                        dark spot if not already pursuing a player.
+                        During rain or daybreak, they teleport away to underground locations, such as caves.
+                    </p>
+                    <p>
+                        Ranged attacks are ineffective against endermen, as they teleport when hit by a projectile
+                        instead
+                        of taking damage.
+                        Arrows and tridents appear to bounce off an enderman who is unable to teleport.
+                    </p>
+                </div>
+                <div>
+                    <h2>Teleportation</h2>
+                    <span class="abtsideimage" id="teleportation"><img src="./images/enderman-teleport.gif"
+                            alt="Hostile Enderman" height="150">
+                        <p class="imgdescription">Enderman teleporting</p>
+                    </span>
+                    <p>
+                        Endermen do not teleport in the daytime if on soul sand unless they are damaged.
+
+                        They play a sound exclusively at the teleportation destination.[3]
+
+                        Each teleportation attempt chooses a random destination 32 blocks along each axis cube
+                        centered on the current position). It then seeks downward from the chosen destination until the
+                        block below is made of a movement-blocking material.
+                    </p>
+                    <p>
+                        Endermen always attempt to teleport upon taking damage.
+                        Most melee attacks are successful, but the enderman usually teleports a few blocks behind the
+                        player when hit,
+                        if there is space behind the player.
+                        Endermen can be attacked with projectiles if they are in a boat or minecart.
+                        An enderman cannot teleport while it is in a minecart or boat, although in rain and water it
+                        attempts to do so, always teleporting back repeatedly until death.
+                    </p>
+                </div>
+                <div>
+                    <h2>Carrying blocks</h2>
+                    <span class="abtsideimage" id="blocks"><img src="./images/Enderman_(holding_TNT).webp"
+                            alt="Hostile Enderman" height="150">
+                        <p class="imgdescription">Enderman carrying a block</p>
+                    </span>
+                    <p>
+                        Unlike any other mobs, which cannot hold blocks except as items,
+                        endermen have a unique ability to pick up, carry and set down certain blocks.
+                        They silently pick up blocks in a 4×3×4 (xyz) region horizontally centered on the enderman
+                        and vertically encompassing it. An enderman cannot pick up blocks in a completely flat area.
+                        Endermen drop the block they are holding upon death as an item,
+                        although they do not visually let go of the block when dying.
+                        It does not despawn while holding a block. Endermen cannot place blocks onto bedrock or
+                        entities.
+                    </p>
+                </div>
+            </div>
+            <div class="selectTab" id="abtGallery">
+                <!-- Trigger the Modal -->
+                <div class="biomeText">Dimensions</div>
+                <div class="biomeRow">
+                    <img class="biomeImg" id="biome1" src="./images/biomes/overworld.jpg" alt="Overworld" width="100"
+                        onclick="openBiomeImg(1)">
+                    <img class="biomeImg" id="biome2" src="./images/biomes/Nether.webp" alt="The Nether" width="100"
+                        onclick="openBiomeImg(2)">
+                    <img class="biomeImg" id="biome3" src="./images/biomes/theend.webp" alt="The End" width="100"
+                        onclick="openBiomeImg(3)">
+                </div>
+                <div class="biomeText">Nether biomes</div>
+                <div class="biomeRow">
+                    <img class="biomeImg" id="biome4" src="./images/biomes/Warped_Forest.webp" alt="Snow" width="100"
+                        onclick="openBiomeImg(4)">
+                    <img class="biomeImg" id="biome5" src="./images/biomes/Nether_Wastes.webp" alt="Snow" width="100"
+                        onclick="openBiomeImg(5)">
+                    <img class="biomeImg" id="biome6" src="./images/biomes/SoulSandValley.webp" alt="Snow" width="100"
+                        onclick="openBiomeImg(6)">
+                </div>
+                <!-- The Modal -->
+                <div id="biomeModal" class="biomeGallery">
+
+                    <!-- The Close Button -->
+                    <span class="closeBiome">&times;</span>
+
+                    <!-- Modal Content (The Image) -->
+                    <img class="modal-content" id="img01">
+
+                    <!-- Modal Caption (Image Text) -->
+                    <div id="caption"></div>
+                </div>
+
+
+            </div>
+            <div class="selectTab" id="audioSFX">
+                <!-- Trigger the Modal -->
+                <div class="audioText">Sound effects</div>
+                <div class="audioRow">
+                    <div class="iconAudio">
+                        <div class="audioContainer">
+                            <img class="iconImg" src="./images/Music_Disc_Mall_JE1_BE1.webp" alt="icon 1" id="icon1"
+                                width="75" height="75"
+                                ondblclick="document.getElementById('audioPlayer1').style.display='block'; document.getElementById('audioPlayer2').style.display='none'; activatePlayer(1, 1)">
+                            <audio id="sfx1" src="./audio/Enderman_idle1.ogg"></audio>
+                        </div>
+                        <p class="iconText">idle1.ogg</p>
+                    </div>
+                    <div class="iconAudio">
+                        <div class="audioContainer">
+                            <img class="iconImg" src="./images/Music_Disc_Mall_JE1_BE1.webp" alt="icon 1" id="icon1"
+                                width="75" height="75"
+                                ondblclick="document.getElementById('audioPlayer1').style.display='block'; document.getElementById('audioPlayer2').style.display='none'; activatePlayer(1, 2) ">
+                            <audio id="sfx2" src="./audio/Enderman_idle3.ogg"></audio>
+                        </div>
+                        <p class="iconText">idle2.ogg</p>
+                    </div>
+                    <div class="iconAudio">
+                        <div class="audioContainer">
+                            <img class="iconImg" src="./images/Music_Disc_Mall_JE1_BE1.webp" alt="icon 1" id="icon1"
+                                width="75" height="75"
+                                ondblclick="document.getElementById('audioPlayer1').style.display='block'; document.getElementById('audioPlayer2').style.display='none'; activatePlayer(1, 3)">
+                            <audio id="sfx3" src="./audio/Enderman_idle4.ogg"></audio>
+                        </div>
+                        <p class="iconText">idle3.ogg</p>
+                    </div>
+                    <div class="iconAudio">
+                        <div class="audioContainer">
+                            <img class="iconImg" src="./images/Music_Disc_Mall_JE1_BE1.webp" alt="icon 1" id="icon1"
+                                width="75" height="75"
+                                ondblclick="document.getElementById('audioPlayer1').style.display='block'; document.getElementById('audioPlayer2').style.display='none'; activatePlayer(1, 4)">
+                            <audio id="sfx4" src="./audio/Enderman_death.ogg"></audio>
+                        </div>
+                        <p class="iconText">death.ogg</p>
+                    </div>
+                    <div class="iconAudio">
+                        <div class="audioContainer">
+                            <img class="iconImg" src="./images/Music_Disc_Mall_JE1_BE1.webp" alt="icon 1" id="icon1"
+                                width="75" height="75"
+                                ondblclick="document.getElementById('audioPlayer1').style.display='block'; document.getElementById('audioPlayer2').style.display='none'; activatePlayer(1, 5)">
+                            <audio id="sfx5" src="./audio/Enderman_hurt1.ogg"></audio>
+                        </div>
+                        <p class="iconText">hurt1.ogg</p>
+                    </div>
+                </div>
+                <div class="audioPlayer" id="audioPlayer1">
+                    <p class="closeAudio"
+                        onclick="document.getElementById('audioPlayer1').style.display='none'; stopAudio(1)">&times;
+                    </p> <audio controls id="audioPlay1">
+                        <source id="audioSource1" src="./audio/Meet Me In The Pale Moonlight.mp3">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="audioRow">
+                    <div class="iconAudio">
+                        <div class="audioContainer">
+                            <img class="iconImg" src="./images/Music_Disc_Mall_JE1_BE1.webp" alt="icon 1" id="icon1"
+                                width="75" height="75"
+                                ondblclick="document.getElementById('audioPlayer2').style.display='block'; document.getElementById('audioPlayer1').style.display='none'; activatePlayer(2, 6)">
+                            <audio id="sfx6" src="./audio/Enderman_hurt4.ogg"></audio>
+                        </div>
+                        <p class="iconText">hurt2.ogg</p>
+                    </div>
+                    <div class="iconAudio">
+                        <div class="audioContainer">
+                            <img class="iconImg" src="./images/Music_Disc_Mall_JE1_BE1.webp" alt="icon 1" id="icon1"
+                                width="75" height="75"
+                                ondblclick="document.getElementById('audioPlayer2').style.display='block'; document.getElementById('audioPlayer1').style.display='none'; activatePlayer(2, 7)">
+                            <audio id="sfx7" src="./audio/Enderman_stare.ogg"></audio>
+                        </div>
+                        <p class="iconText">stare.ogg</p>
+                    </div>
+                    <div class="iconAudio">
+                        <div class="audioContainer">
+                            <img class="iconImg" src="./images/Music_Disc_Mall_JE1_BE1.webp" alt="icon 1" id="icon1"
+                                width="75" height="75"
+                                ondblclick="document.getElementById('audioPlayer2').style.display='block'; document.getElementById('audioPlayer1').style.display='none'; activatePlayer(2, 8)">
+                            <audio id="sfx8" src="./audio/Enderman_scream1.ogg"></audio>
+                        </div>
+                        <p class="iconText">scream1.ogg</p>
+                    </div>
+                    <div class="iconAudio">
+                        <div class="audioContainer">
+                            <img class="iconImg" src="./images/Music_Disc_Mall_JE1_BE1.webp" alt="icon 1" id="icon1"
+                                width="75" height="75"
+                                ondblclick="document.getElementById('audioPlayer2').style.display='block'; document.getElementById('audioPlayer1').style.display='none'; activatePlayer(2, 9)">
+                            <audio id="sfx9" src="./audio/Enderman_scream4.ogg"></audio>
+                        </div>
+                        <p class="iconText">scream2.ogg</p>
+                    </div>
+                    <div class="iconAudio">
+                        <div class="audioContainer">
+                            <img class="iconImg" src="./images/Music_Disc_Mall_JE1_BE1.webp" alt="icon 1" id="icon1"
+                                width="75" height="75"
+                                ondblclick="document.getElementById('audioPlayer2').style.display='block'; document.getElementById('audioPlayer1').style.display='none'; activatePlayer(2, 10)">
+                            <audio id="sfx10" src="./audio/Teleport1.ogg"></audio>
+                        </div>
+                        <p class="iconText">Teleport1.ogg</p>
+                    </div>
+
+                </div>
+                <div class="audioPlayer" id="audioPlayer2">
+                    <p class="closeAudio"
+                        onclick="document.getElementById('audioPlayer2').style.display='none'; stopAudio(2)">&times;
+                    </p> <audio controls id="audioPlay2">
+                        <source id="audioSource2" src="./audio/Meet Me In The Pale Moonlight.mp3">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </div>
+
+            <footer class="aboutContainer">
+                <div class="abtTitle">&ThickSpace;</div>
+            </footer>
+        </div>
+
+
+    </div>
+
+    <!--Gallery Lightbox -->
+    <div id="gallery" class="modal">
+        <div id="galleryModal">
+            <div id="galleryTop">
+                <span class="minimize"
+                    onclick="minimizeModal(); document.getElementById('galleryTask').style.backgroundColor='blueviolet';">&minus;</span>
+                <span class="close" onclick="closeModal(); closeTask('galleryTask')">&times;</span>
+            </div>
+            <div class="lightboxContent">
+
+                <div class="mySlides" id="slide1">
+                    <div class="numbertext">1 / 12</div>
+                    <img class="lbImg" src="./images/endermen/endermanblock.webp" style="width:100%">
+                </div>
+
+                <div class="mySlides" id="slide2">
+                    <div class="numbertext">2 / 12</div>
+                    <img class="lbImg" src="./images/biomes/theend.webp" style="width:100%">
+                </div>
+
+                <div class="mySlides" id="slide3">
+                    <div class="numbertext">3 / 12</div>
+                    <img class="lbImg" src="./images/endermen/endermanHostile.gif" style="width:100%">
+                </div>
+
+                <div class="mySlides" id="slide4">
+                    <div class="numbertext">4 / 12</div>
+                    <img class="lbImg" src="./images/endermen/Close_to_enderman.png" style="width:100%">
+                </div>
+
+                <div class="mySlides" id="slide5">
+                    <div class="numbertext">5 / 12</div>
+                    <img class="lbImg" src="./images/endermen/endermanholdingblock.gif" style="width:100%">
+                </div>
+
+                <div class="mySlides" id="slide6">
+                    <div class="numbertext">6 / 12</div>
+                    <img class="lbImg" src="./images/endermen/InvisibleEnderman.webp" style="width:100%">
+                </div>
+                <div class="mySlides" id="slide7">
+                    <div class="numbertext">7 / 12</div>
+                    <img class="lbImg" src="./images/endermen/trapped.gif" style="width:100%">
+                </div>
+
+                <div class="mySlides" id="slide8">
+                    <div class="numbertext">8 / 12</div>
+                    <img class="lbImg" src="./images/endermen/Endermancart.png" style="width:100%">
+                </div>
+
+                <div class="mySlides" id="slide9">
+                    <div class="numbertext">9 / 12</div>
+                    <img class="lbImg" src="./images/endermen/Ender_Eye.webp" style="width:100%">
+                </div>
+
+                <div class="mySlides" id="slide10">
+                    <div class="numbertext">10 / 12</div>
+                    <img class="lbImg" src="./images/endermen/originalEnderman.gif" style="width:100%">
+                </div>
+
+                <div class="mySlides" id="slide11">
+                    <div class="numbertext">11 / 12</div>
+                    <img class="lbImg" src="./images/endermen/Enderman_SSBU.webp" style="width:100%">
+                </div>
+
+                <div class="mySlides" id="slide12">
+                    <div class="numbertext">12 / 12</div>
+                    <img class="lbImg" src="./images/endermen/enderman2-1000x700.jpg" style="width:100%">
+                </div>
+
+                <!-- Next/previous controls -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                <!-- Caption text -->
+                <div class="caption-container">
+                    <p id="caption2">nya</p>
+                </div>
+
+                <!-- Thumbnail image controls -->
+                <div class="column">
+                    <img class="demo" id="thumb1" src="./images/endermen/thumbs/endermanblock.webp"
+                        onclick="currentSlide(1)" alt="Enderman holding block">
+                </div>
+
+                <div class="column">
+                    <img class="demo" id="thumb2" src="./images/endermen/thumbs/theend.png" onclick="currentSlide(2)"
+                        alt="A haunting of Endermen in The End">
+                </div>
+
+                <div class="column">
+                    <img class="demo" id="thumb3" src="./images/endermen/thumbs/endermanHostile.png"
+                        onclick="currentSlide(3)" alt="A hostile Enderman">
+                </div>
+
+                <div class="column">
+                    <img class="demo" id="thumb4" src="./images/endermen/thumbs/Close_to_enderman.png"
+                        onclick="currentSlide(4)" alt="Enderman up close">
+                </div>
+                <div class="column">
+                    <img class="demo" id="thumb5" src="./images/endermen/thumbs/endermanholdingblock.png"
+                        onclick="currentSlide(5)" alt="Enderman holding block (in motion)">
+                </div>
+                <div class="column">
+                    <img class="demo" id="thumb6" src="./images/endermen/thumbs/InvisibleEnderman.png"
+                        onclick="currentSlide(6)" alt="Enderman with invisibility effect">
+                </div>
+                <div class="column">
+                    <img class="demo" id="thumb7" src="./images/endermen/thumbs/trapped.png" onclick="currentSlide(7)"
+                        alt="A trapped Enderman">
+                </div>
+
+                <div class="column">
+                    <img class="demo" id="thumb8" src="./images/endermen/thumbs/Endermancart.png"
+                        onclick="currentSlide(8)" alt="Enderman trapped in a minecart">
+                </div>
+
+                <div class="column">
+                    <img class="demo" id="thumb9" src="./images/endermen/thumbs/Ender_Eye.png" onclick="currentSlide(9)"
+                        alt="World through the eyes of an Enderman">
+                </div>
+
+                <div class="column">
+                    <img class="demo" id="thumb10" src="./images/endermen/thumbs/originalEnderman.png"
+                        onclick="currentSlide(10)" alt="Alpha version Enderman (green eyes)">
+                </div>
+                <div class="column">
+                    <img class="demo" id="thumb11" src="./images/endermen/thumbs/Enderman_SSBU.png"
+                        onclick="currentSlide(11)" alt="Enderman costume in Smash Bros Ultimate">
+                </div>
+                <div class="column">
+                    <img class="demo" id="thumb12" src="./images/endermen/thumbs/enderman2-1000x700.png"
+                        onclick="currentSlide(12)" alt="Enderman in Mobestiary">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--TRIVIA Modal-->
+
+
+    <div class="modal" id="trivia">
+        <div id="triviaModal" onclick="insideClick('triviaTask');">
+
+            <header class="aboutContainer">
+                <span onclick="document.getElementById('trivia').style.display='none'"
+                    class="minimizeAbt">&minus;</span>
+                <span class="vl"></span>
+                <span
+                    onclick="chooseOption(event, 'triviaChoose', 'homeTab'); document.getElementById('trivia').style.display='none'; closeTask('triviaTask')"
+                    class="closeAbt">&times;</span>
+                <div class="abtTitle"><strong> Enderman Trivia</strong></div>
+            </header>
+
+            <div class="tabBar">
+                <button class="tablink barItem trivTabs" id="backHome"
+                    onclick="chooseOption(event, 'triviaChoose', 'homeTab')">&LessLess;</button>
+                <button class="tablink barItem trivTabs" id="homeTab"
+                    onclick="chooseOption(event, 'triviaChoose', 'homeTab')">Home</button>
+                <button class="tablink barItem trivTabs" id="devTab">Development</button>
+                <button class="tablink barItem trivTabs" id="alphaTab">Alpha</button>
+                <button class="tablink barItem trivTabs" id="gameTab">Gameplay</button>
+                <button class="tablink barItem trivTabs" id="miscTab">Misc</button>
+            </div>
+
+            <div class="selectTrivia" id="triviaChoose">
+                <div class="triviaRow">
+                    <div class="triviaBox" id="triviaDevelopment"
+                        ondblclick="chooseOption(event, 'trivDevTab', 'devTab')">
+                        Development</div>
+                    <div class="triviaBox" id="triviaAlpha"
+                        ondblclick="chooseOption(event, 'trivAlphaTab', 'alphaTab')">Alpha version
+                    </div>
+                </div>
+                <div class="triviaRow">
+
+                    <div class="triviaBox" id="triviaGame" ondblclick="chooseOption(event, 'trivGameTab', 'gameTab')">
+                        Gameplay</div>
+                    <div class="triviaBox" id="triviaMisc" ondblclick="chooseOption(event, 'trivMiscTab', 'miscTab')">
+                        Misc</div>
+                </div>
+            </div>
+
+            <div class="selectTrivia" id="trivDevTab">
+                <h2>Development</h2>
+
+                <p>Sometime on or before July, 26 2011, Notch posts an image on his Google+ account showing planned
+                    "creepy mobs." Two can be seen holding a grass block and a sand block with their arms far
+                    outstrached</p>
+                <div class="dblImgContainer">
+                    <div class="trivDblImg">
+                        <img class="trivImage" src="./images/endermen/trivia/alpha/Original_enderman_screenshot.webp">
+                        <img class="trivImage" src="./images/endermen/trivia/alpha/BrightEnderman.webp">
+                    </div>
+                    <p class="imgdescription">Original Enderman screenshots</p>
+                </div>
+
+                <div>
+                    <p>July 28, 2011 Notch described that endermen would be peaceful, unless you looked straight at
+                        them,
+                        then they would rush in to attack whenever you broke the gaze.</p>
+                    <span class="trivSideImage wideTriv rightTriv"><img
+                            src="./images/endermen/trivia/alpha/Tierra_ender_1.8.webp" alt="Green Eyed Enderman"
+                            height="150">
+                        <p class="imgdescription">Green eyed Enderman</p>
+                    </span>
+
+                    <p> July 29, 2011 At first, when Notch was still designing the endermen, he thought they were not
+                        "creepy" enough, coming with the idea that having a situation that the player would want to
+                        avoid
+                        could make the enderman significantly more scary. This gave Notch the idea to implement the
+                        staring
+                        feature, where aiming the crosshair at the enderman's face would cause a suspenseful moment in
+                        which
+                        breaking eye contact would trigger an attack, as well as the enderman having the ability to
+                        teleport
+                        so that when the player has stared at the enderman, they would have to face a consequence for
+                        that
+                        action.</p>
+
+                    <p>In the Beta 1.8 demo at PAX, endermen dropped diamonds as a placeholder for ender pearls.
+
+                    </p>
+                    <span class="trivSideImage narrowTriv leftTriv"><img
+                            src="./images/endermen/trivia/Diamond_JE3_BE3.webp" alt="Diamond" height="100">
+                        <p class="imgdescription">Diamond</p>
+                    </span>
+                    <p>&SmallCircle; Notch claimed in public that the enderman is a "subtle reference" to the
+                        Slenderman,
+                        a similar-looking monster with a similar name. Given the later development of the End,
+                        it is possible he already had the name in mind, and did not choose it because of the Reddit
+                        thread
+                        in which their name was revealed.
+
+                    </p>
+                </div>
+                <div class="dblImgContainer">
+                    <div class="trivDblImg">
+                        <img class="trivImage" src="./images/endermen/trivia/alpha/EndermenReddit.webp">
+                        <img class="trivImage" src="./images/endermen/trivia/alpha/EndermenRedditEnhanced.webp">
+                    </div>
+                    <p class="imgdescription">Reddit reveal screenshots</p>
+                </div>
+            </div>
+
+            <div class="selectTrivia" id="trivAlphaTab">
+                <h2>Alpha/Beta content</h2>
+                <div>
+                    <div>
+                        <span class="trivSideImage wideTriv rightTriv"><img
+                                src="./images/endermen/trivia/alpha/Enderman_trailer.webp" alt="Green Eyed Enderman"
+                                height="150">
+                            <p class="imgdescription">Reveal trailer</p>
+                        </span>
+                        <p> &SmallCircle; The enderman has been officially introduced.
+                            Endermen are able to pick up any full block, including bedrock and spawners. The angle of
+                            their
+                            arms
+                            have also been lowered when holding a block.
+                            Endermen have green eyes and emit black smoke. They also have zombie sounds as a
+                            placeholder.
+                        </p>
+                        <audio controls>
+                            <source src="./audio/Enderman_idle1.ogg" type="audio/ogg">
+                            Your browser does not support the audio element.
+                        </audio>
+
+                        <div class="dblImgContainer">
+                            <div class="trivDblImg">
+                                <img class="trivImage" src="./images/endermen/trivia/alpha/Endermanlooking.webp">
+                                <img class="trivImage" src="./images/endermen/trivia/Cavern1.8.2_ender.webp">
+                            </div>
+                            <p class="imgdescription">Beta Minecraft Endermen</p>
+                        </div>
+                        <p>&SmallCircle; The enderman eye color has been changed from green to purple.
+                            Endermen now emit portal particles, rather than smoke.
+                            Endermen no longer pick up unobtainable blocks including bedrock, double slabs, and spawners
+                            and
+                            also no longer pick up blocks with inventories including chests, dispensers, and furnaces
+                            but
+                            can
+                            still pick up any other full block.</p>
+
+                    </div>
+                    <div><span class="trivSideImage wideTriv rightTriv"><img
+                                src="./images/endermen/trivia/endermanfloatinginwater.gif" alt="Enderman in Water"
+                                height="150">
+                            <p class="imgdescription">Enderman floating in water</p>
+                        </span>
+                        <p>&SmallCircle; Before this update, endermen could be killed with the use of a bow. Now,
+                            arrows,
+                            snowballs, eggs and
+                            other ranged attacks do not hit them due to the fact that they teleport away before impact.
+                            Enderman now teleport away and become neutral if they are in water.</p>
+
+                        <span class="trivSideImage wideTriv leftTriv"><img
+                                src="./images/endermen/trivia/Angry_Endermen.webp" alt="Green Eyed Enderman"
+                                height="150">
+                            <p class="imgdescription">Endermen in sunlight</p>
+                        </span>
+                        <p>&SmallCircle; Endermen used to burn in sunlight, but as of this update, they instead randomly
+                            teleport around
+                            until they find a dark spot or despawn eventually. This makes it extremely hard to get close
+                            enough
+                            to kill them during daytime.</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="selectTrivia" id="trivGameTab">
+                <div>
+                    <span class="trivSideImage wideTriv leftTriv"><img src="./images/endermen/trivia/Ender_Eye.webp"
+                            height="150"> <audio></audio>
+                        <p class="imgdescription">Inverted vision</p>
+                    </span>
+                    <p>&SmallCircle; Switching to spectator mode and taking an enderman's point of
+                        view adds a shader
+                        that inverts colors, suggesting that they see the End as an island of blue cobblestone
+                        (as end stone is a yellowish version of cobblestone with inverted colors) in a white sky,
+                        with white pillars, white endermen with green eyes and a white ender dragon, also with green
+                        eyes.
+                        They also see cobblestone as end stone.</p>
+                    <div class="dblImgContainer">
+                        <div class="trivDblImg">
+                            <img class="trivImage" src="./images/endermen/trivia/endervision.png">
+                            <img class="trivImage" src="./images/endermen/trivia/endervision2.png">
+                        </div>
+                        <p class="imgdescription">Endervision</p>
+                    </div>
+                </div>
+
+                <div>
+
+                    <span class="trivSideImage wideTriv rightTriv"><img
+                            src="./images/endermen/trivia/InvisibleEnderman.webp" height="150"> <audio></audio>
+                        <p class="imgdescription">Invisible Enderman</p>
+                    </span>
+                    <p>&SmallCircle; The texture for an enderman's eyes is located in a different texture file than the
+                        body, allowing
+                        their
+                        eyes
+                        to glow. Because the two textures do not line up perfectly, forcing an enderman to look straight
+                        up
+                        causes
+                        its eyes to turn blank white.
+                        This also causes the enderman's eyes to be visible even when under the Invisibility effect.
+
+                    </p>
+
+                    <span class="trivSideImage wideTriv leftTriv"><img
+                            src="./images/endermen/trivia/Chorus_Fruit_JE2_BE2.webp" height="150"> <audio></audio>
+                        <p class="imgdescription">Chorus fruit</p>
+                    </span>
+
+                    <p> &SmallCircle; The enderman teleportation sound also plays when a player
+                        teleports using an ender pearl‌[Bedrock Edition only] or chorus fruit.</p>
+                    <audio controls>
+                        <source src="./audio/Teleport1.ogg" type="audio/ogg">
+                        Your browser does not support the audio element.
+                    </audio>
+
+
+                </div>
+            </div>
+
+
+            <div class="selectTrivia" id="trivMiscTab">
+                <h2>Miscellaneous</h2>
+                <div>
+                    <p>
+                        &SmallCircle; The developers have stated that the belief that enderman sounds are backward
+                        distortions is just
+                        speculation.</p>
+                    <span class="trivSideImage wideTriv rightTriv"><img
+                            src="./images/endermen/trivia/Enderman_Party.webp" alt="A group of Endermen" height="150">
+                        <p class="imgdescription">A group of Endermen</p>
+                    </span>
+                    <p> &SmallCircle; Dinnerbone suggested "a haunting of endermen" as the collective noun for Endermen.
+                        Additionally, in the third episode of Minecraft: Story Mode, The Last Place You Look,
+                        a player is given the option to correct the grammar of other characters by specifying that the
+                        collective noun for a group of endermen is "a haunting of Endermen".
+                        In the fourth Minecraft novel Minecraft: The End, the collective term used by endermen
+                        themselves is
+                        "an End of Endermen". <img class="trivImage"></p>
+
+
+                </div>
+                <div>
+                    <span class="trivSideImage wideTriv leftTriv"><img src="./images/endermen/Enderman_SSBU.webp"
+                            alt="Enderman in SSBU" height="150">
+                        <p class="imgdescription">Enderman in SSBU</p>
+                    </span>
+                    <p> &SmallCircle; The enderman is a playable DLC character in the crossover fighting game Super
+                        Smash
+                        Bros. Ultimate
+                        as an
+                        alternate costume for Steve, though with altered proportions to be at Steve's height.
+                        Additionally,
+                        there is
+                        an enderman "spirit" that makes the user vulnerable to damage by water, as are regular
+                        endermen.<img class="trivImage">
+                    </p>
+                    <span class="trivSideImage wideTriv rightTriv"><img src="./images/endermen/trivia/ssbu_spirit.png"
+                            alt="Enderman Spirit" height="150">
+                        <p class="imgdescription">Enderman Spirit</p>
+                    </span>
+                    <iframe width="380" height="200" src="https://www.youtube.com/embed/d1sJWftz6wE"
+                        title="Super Smash Bros. Ultimate - Enderman" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                    </p>
+                </div>
+            </div>
+
+
+            <footer class="aboutContainer">
+                <div class="abtTitle">&ThickSpace;</div>
+            </footer>
+
+        </div>
+    </div>
+
+    <script src="./js/endertechno.js"></script>
+    <script>
+        const element = document.getElementById("trivia");
+        element.addEventListener("click", myFunction);
+
+        function myFunction() {
+            switchTasks(2);
+        }
+    </script>
+
+
+
+</body>
+
+</html>

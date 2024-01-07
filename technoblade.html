@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technoblade ---</title>
+    <script type='text/javascript'>
+        title = "Technoblade ---";
+        position = 0;
+        function scrolltitle() {
+            document.title = title.substring(position, title.length) + title.substring(0, position);
+            position++;
+            if (position > title.length) position = 0;
+            titleScroll = window.setTimeout(scrolltitle, 300);
+        }
+        scrolltitle();
+    </script>
+    <link rel="stylesheet" type="text/css" href="./styles/techno.css" />
+
+    <link rel="icon" href="techno.png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous" />
+
+</head>
+
+<body>
+
+    <div class="desktop" id="desktop">
+        <div class="desktopIcons">
+            <div class="iconRow" id="row1">
+                <div class="icon" onclick="outsideClick(); this.style.backgroundColor='rgba(139, 139, 139, 0.171)';"
+                    ondblclick="this.style.backgroundColor='rgba(139, 139, 139, 0.0)'">
+                    <img class="iconImg" src="./images/icons/technoAbout.webp" alt="icon 1" id="icon1" width="60"
+                        height="60"
+                        ondblclick="document.getElementById('about').style.display='block'; openTask(0); this.style.backgroundColor='rgba(139, 139, 139, 0.0)'; document.getElementById('aboutTask').style.backgroundColor = 'rgb(252, 112, 112)';">
+                    <p class="iconText">About</p>
+                </div>
+                <div class="icon" onclick="outsideClick(); this.style.backgroundColor='rgba(139, 139, 139, 0.171)';"
+                    ondblclick="this.style.backgroundColor='rgba(139, 139, 139, 0.0)'">
+                    <img class="iconImg" src="./images/icons/technoGallery.webp" alt="icon 2" id="icon2" width="60"
+                        height="60"
+                        ondblclick="openModal(); openTask(1); document.getElementById('galleryTask').style.backgroundColor = 'rgb(252, 112, 112)';">
+                    <p class="iconText">Gallery</p>
+                </div>
+                <div class="icon" onclick="outsideClick(); this.style.backgroundColor='rgba(139, 139, 139, 0.171)'"
+                    ondblclick="this.style.backgroundColor='rgba(139, 139, 139, 0.0)'">
+                    <img class="iconImg" src="./images/icons/technoTrivia.webp" alt="icon 3" id="icon3" width="75"
+                        height="75"
+                        ondblclick="document.getElementById('trivia').style.display='block'; openTask(2), document.getElementById('triviaTask').style.backgroundColor = 'rgb(252, 112, 112)';">
+                    <p class="iconText">Trivia</p>
+                </div>
+            </div>
+        </div>
+        <div class="taskbar">
+
+            <div id="homeContainer">
+                <img src="./mc.png" alt="home" class="homeIcon">
+            </div>
+            <div id="tasksContainer">
+
+            </div>
+            <div id="backToDesktop" onclick="minimizeEverything();">
+
+            </div>
+        </div>
+
+        <div id="technoBlade">
+            <div id="pigstepcontainer">
+                <audio controls volume="0.2" autoplay id="pigstepplayer">
+                    <source src="./audio/05 - Pigstep (Stereo Mix).mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+            <div class="technoIcon" onclick="changeTechno();">
+                <img class="iconImg" id="technoImg" src="./images/technoblade/technoblade-flop-min-nmlh.webp"
+                    alt="icon 3" id="icon3" width="75" height="auto">
+            </div>
+        </div>
+    </div>
+
+    <!--START Modal-->
+
+    <!-- The Modal -->
+    <div id="start" class="startModal">
+
+        <!-- Modal content -->
+        <div class="startContent">
+            <div id="startMenu">
+                <div class="startItem"
+                    onclick="document.getElementById('about').style.display='block'; openTask(0); closeStart();">
+                    <img class="startImg" src="./images/icons/technoAbout.webp" width="60" height="60">
+                    <p class="startText">About</p>
+                </div>
+                <div class="startItem" onclick="openModal(); openTask(1); closeStart();">
+                    <img class="startImg" src="./images/icons/technoGallery.webp" width="60" height="60">
+                    <p class="startText">Gallery</p>
+                </div>
+                <div class="startItem"
+                    onclick="document.getElementById('trivia').style.display='block'; openTask(2); closeStart();">
+                    <img class="startImg" src="./mc.png" width="60" height="60">
+                    <p class="startText">Trivia</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!--ABOUT Modal-->
+    <div class="modal" id="about">
+        <div id="aboutModal">
+            <header class="aboutContainer">
+                <span onclick="document.getElementById('about').style.display='none'" class="minimizeAbt">&minus;</span>
+                <span class="vl"></span>
+                <span
+                    onclick="document.getElementById('about').style.display='none'; closeCity(event, 'aboutContent'); closeTask('aboutTask')"
+                    class="closeAbt">&times;</span>
+                <div class="abtTitle"><strong> About Technoblade</strong></div>
+            </header>
+            <div class="tabBar">
+                <button class="tablink barItem abtTabs" id="firstTab"
+                    onclick="openCity(event, 'aboutContent')">About</button>
+                <button class="tablink barItem abtTabs" id="lore"
+                    onclick="openCity(event, 'abtBehaviour')">Lore</button>
+                <button class="tablink barItem abtTabs" id="merch"
+                    onclick="openCity(event, 'abtGallery')">Merch</button>
+                <button class="tablink barItem abtTabs" id="quotes"
+                    onclick="openCity(event, 'audioSFX')">Quotes</button>
+            </div>
+            <div class="selectTab" id="aboutContent">
+                <div class="tabArea" id="profile">
+                    <div class="abtTable">
+                        <div class="abtImage">
+                            <img class="enderImg" src="./images/technoblade/Technoblade_skin.webp"
+                                alt="Technoblade's Minecraft skin" width="120">
+                        </div>
+                        <div class="enderInfo">
+                            <table>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Alexander</td>
+                                </tr>
+                                <tr>
+                                    <td>IGN</td>
+                                    <td>Technoblade</td>
+                                </tr>
+                                <tr>
+                                    <td>Birth date</td>
+                                    <td>June 2022</td>
+                                </tr>
+                                <tr>
+                                    <td>Height</td>
+                                    <td>188cm</td>
+                                </tr>
+                                <tr>
+                                    <td>Location</td>
+                                    <td>San Francisco, California, USA</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><a target="_blank"
+                                            href="https://www.youtube.com/channel/UCFAiFyGs6oDiF1Nf-rRJpZA">YouTube
+                                            channel</a>
+                                    </td>
+                                </tr>
+                                </tr>
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="tabArea" id="descText">
+                    <h2>About</h2>
+                    <p>
+                        Alexander "Alex", better known online as Technoblade and most commonly known as Techno,
+                        was a Minecraft YouTuber and friend of the Dream Team. </p>
+                    <p>
+                        There was a running rivalry joke between him and Dream, as they both often competed against each
+                        other in competitions. Techno logged on to the Dream SMP for the first time on September 22,
+                        2020.
+                    </p>
+                    <p>
+                        Technoblade made the majority of his videos on the Minecraft server Hypixel. The time range
+                        between his video uploads was usually a week to a month, though he had tried (and failed) to do
+                        daily episodes. He also streamed Minecraft content live on YouTube, playing on the popular
+                        Minecraft server Hypixel, Minecraft Mondays, MC Championship, SMP Earth, Minecraft Story Mode,
+                        Party Games and the Dream SMP. </p>
+                    <p>
+                        He was part of Sleepyboisinc along with Wilbur Soot, Ph1LzA and
+                        TommyInnit. He had been nicknamed "The Blade" by Tommy.
+                    </p>
+                    <p>
+
+                        On June 30, 2022, his family released a video announcing that he had passed away due to
+                        cancer.
+                    </p>
+                </div>
+            </div>
+            <div class="selectTab" id="abtBehaviour">
+                <div>
+                    <h2>
+                        Lore
+                    </h2>
+                    <span class="trivSideImage wideTriv leftTriv">
+                        <img src="./images/technoblade/Duel_at_pogtoopia.webp" alt="Duel at Pogtopia" height="130">
+                        <p class="imgdescription">Duel after Manberg Festival</p>
+                    </span>
+                    <p>
+                        Technoblade, also known as Techno, is the twenty-third member of the Dream SMP, joining on
+                        September 22, 2020. He is an anarchist opposed to government (as he considers them tyrannical
+                        and oppressive) and a co-founder of the Syndicate, a federation dedicated to upholding anarchist
+                        ideology. He is known for his dueling skills and prowess in battle.
+                    </p>
+                    <p>
+                        Techno allied with those who promised to help him achieve his goals of anarchy and the
+                        eradication of government. He first joined the server at the beginning of the Manberg Rebellion
+                        when Wilbur Soot and TommyInnit were exiled from Manberg and began planning to revolt against
+                        Jschlatt's rule along with the two by forming the faction Pogtopia. Techno spent weeks gathering
+                        resources to aid Pogtopia in removing Jschlatt’s administration.
+                    </p>
+                    <p>
+                        Techno and Pogtopia had a rift
+                        after he caused a mass murder during the Manberg Festival, during which he was forced to execute
+                        Tubbo. Some members of Pogtopia distrusted Techno, but he continued to aid their cause and
+                        encouraged Wilbur to pursue his TNT plot. At the end of the Manberg vs Pogtopia War, when Tubbo
+                        was declared the new president of L'Manberg, Techno felt betrayed that Pogtopia had instituted
+                        another government in L'Manberg. He spawned two withers and fought against the new
+                        administration. The withers, alongside Wilbur's TNT, blew a large crater in L'Manberg. However,
+                        the Tubbo Administration quickly began to rebuild L'Manberg. .
+                    </p>
+                </div>
+                <div>
+                    <h2>L'Manberg</h2>
+                    <span class="abtsideimage" id="teleportation"><img src="./images/technoblade/L'Manberg.webp"
+                            alt="LManberg flag" height="150">
+                        <p class="imgdescription">L'Manberg</p>
+                    </span>
+                    <p>
+                        After the war, Technoblade retired, hurt by Pogtopia's betrayal and the institution of yet
+                        another government. He built a cabin in a distant tundra and swore off violence. However, after
+                        the Butcher Army attempted to execute him, Techno longed for revenge.
+
+                    </p>
+                    <p>
+                        He teamed up with Tommy
+                        after Tommy escaped from his exile. Together, they planned to regain the discs and get revenge.
+                        Techno then freed Philza, his longtime friend, from house arrest in L'Manberg. Techno admitted
+                        his plans to destroy L'Manberg to Tommy, and Tommy agreed to help him; however, Tommy soon
+                        rejoined L'Manberg instead. Techno along with Dream and Phil attacked L'Manberg by bombarding it
+                        with TNT and withers during the Doomsday War, permanently ending the nation.
+                    </p>
+                    <p>
+                        Following the Doomsday War, Ranboo joined Techno and Phil, building his own home nearby. Techno
+                        and Phil also founded Syndicate to promote anarchy and diminish tyranny.
+                    </p>
+                </div>
+                <div>
+                    <h2>Prison arc</h2>
+                    <span class="trivSideImage wideTriv leftTriv"><img
+                            src="./images/technoblade/dreamnoblade prison.png" alt="Dream and Technoblade in Prison"
+                            height="150">
+                        <p class="imgdescription">Prison arc</p>
+                    </span>
+                    <p>
+                        He was imprisoned with Dream in Pandora's Vault, falling victim to a plan constructed by
+                        Quackity & Awesamdude, until being broken out by Phil using the Ender Pearl Stasis Chamber.
+                        Following Ranboo’s incarceration, Techno staged a prison break to empty Pandora’s Vault, freeing
+                        Dream, ConnorEatsPants, and Ranboo. After Sam killed Ranboo, Techno teamed up with Tubbo,
+                        rescuing MICHAEL and imprisoning Sam in Pandora.
+                    </p>
+                    <p>
+                        Techno has been primarily portrayed as an anti-hero and briefly an antagonist during Doomsday.
+                        He is one of the two main protagonists of the Empowerment Arc alongside Quackity, his
+                        arch-nemesis, and the main protagonist of the Legacy Arc.
+                    </p>
+                </div>
+            </div>
+            <div class="selectTab" id="abtGallery">
+                <!-- Trigger the Modal -->
+                <div class="biomeText">Vinyl figures and plushies</div>
+                <div class="biomeRow">
+                    <img class="biomeImg" id="biome1" src="./images/technoblade/merch/technoblade_concept.webp"
+                        alt="Technoblade" height="100" width="auto" onclick="openBiomeImg(1)">
+                    <img class="biomeImg" id="biome2" src="./images/technoblade/merch/technoplane-concept.webp"
+                        alt="Technoplane" height="100" width="auto" onclick="openBiomeImg(2)">
+                    <img class="biomeImg" id="biome3" src="./images/technoblade/merch/Anarchy_Technoblade_Art.webp"
+                        alt="Anarchy" height="100" width="auto" onclick="openBiomeImg(3)">
+                </div>
+                <div class="biomeText">Plushie only</div>
+                <div class="biomeRow">
+                    <img class="biomeImg" id="biome4"
+                        src="./images/technoblade/merch/Youtooz-Technoblade-Sit-1ft-Plush.webp" alt="Sit" width="100"
+                        onclick="openBiomeImg(4)">
+                    <img class="biomeImg" id="biome5"
+                        src="./images/technoblade/merch/Youtooz-Technoblade-Flop-1ft-Plush.webp" alt="Flop" width="100"
+                        onclick="openBiomeImg(5)">
+                    <img class="biomeImg" id="biome6"
+                        src="./images/technoblade/merch/Youtooz-Technoblade-1ft-Pillow-Plush.webp" alt="Pillow"
+                        width="100" onclick="openBiomeImg(6)">
+                </div>
+                <!-- The Modal -->
+                <div id="biomeModal" class="biomeGallery">
+
+                    <!-- The Close Button -->
+                    <span class="closeBiome">&times;</span>
+
+                    <!-- Modal Content (The Image) -->
+                    <img class="modal-content" id="img01">
+
+                    <!-- Modal Caption (Image Text) -->
+                    <div id="caption"></div>
+                </div>
+
+
+            </div>
+            <div class="selectTab" id="audioSFX">
+                <!-- Trigger the Modal -->
+                <div class="audioText">Quotes</div>
+                <div class="audioRow">
+                    <ul>
+                        <li>"USA! USA!"</li>
+                        <li> "Technoblade never dies!"</li>
+                        <li> "NOT EVEN CLOSE!"</li>
+                        <li> "We leave. WE LEAVE CHAT!"</li>
+                        <li> "WE WIN THESE!"</li>
+                        <li> "¿Ay caramba, dónde está la biblioteca?" ("Oh dear, where is the library?" in Spanish)</li>
+                        <li> "You see, I was using an advanced strategy called 'lying'"</li>
+                        <li> "You wouldn't know my house it goes to another school"</li>
+                        <li> "If you wish to defeat me, train for another hundred years."</li>
+                        <li> "The second worst thing to ever happen to those orphans."</li>
+                        <li> "SUBSCRIBE TO TECHNOBLADE!"</li>
+                        <li> "BLOOD FOR THE BLOOD GOD."</li>
+                        <li> "ONE OF US"</li>
+                        <li> "Absolute power corrupts absolutely."</li>
+                        <li> "God, that toddler is getting destroyed."</li>
+                        <li> "We’re leaving the past behind us."</li>
+                        <li> "Officer, I dropped kicked that child in SELF-DEFENSE."</li>
+                        <li> "NOT EVEN CLOSE BABY! TECHNOBLADE NEVER DIES!"</li>
+                        <li> "Zeus is a god of feminism."</li>
+                        <li> "Sic semper tyrannis"</li>
+                        <li> "When God sends me to hell, I want him to hesitate."</li>
+                        <li> "I didn't kill them, my slaves did."</li>
+                        <li> "Did you eat that baby!?"</li>
+                        <li> "Christmas? Cancelled. Halloween? Cancelled. That one event where that guy comes and sells
+                            rare pets? Cancelled. Things were getting canceled so fast, people thought it was Twitter."
+                        </li>
+                        <li> "Get the vaccine."</li>
+                        <li> ”So long, Theseus!”</li>
+                        <li> "HEH"</li>
+                        <li> "Listen, I'm a- I'm a Sapnap stan."</li>
+                        <li> "Knock knock, it's the United States."</li>
+                        <li> "Hippity hoppity get off my property."</li>
+                        <li> "If you ever have problems in life don't confront them. Pfft, who does that? Run away from
+                            your problems. That- that's a good lesson to impart on my audience."</li>
+                        <li> "Hello, do you think that you are safe? You are not safe. You're dead."</li>
+                        <li> "I had no expectations, and I still managed to be disappointed."</li>
+                        <li> "Don't stab people in real life you will not get coins you will get jail time."</li>
+                        <li> "My first word of advice: if you want to get a good kill-death ratio in game, you need a
+                            good kill-death ratio in real life."</li>
+                    </ul>
+                </div>
+            </div>
+
+            <footer class="aboutContainer">
+                <div class="abtTitle">&ThickSpace;</div>
+            </footer>
+        </div>
+
+
+    </div>
+
+    <!--Gallery Lightbox -->
+    <div id="gallery" class="modal">
+        <div id="galleryModal">
+            <div id="galleryTop">
+                <span class="minimize"
+                    onclick="minimizeModal(); document.getElementById('galleryTask').style.backgroundColor='rgb(216, 81, 81)';">&minus;</span>
+                <span class="close" onclick="closeModal(); closeTask('galleryTask')">&times;</span>
+            </div>
+            <div class="lightboxContent">
+
+                <div class="mySlides" id="slide1">
+                    <div class="numbertext">1 / 12</div>
+                    <img class="lbImg" src="./images/technoblade/gallery/Technoblade_waifu2x_2x_3n_png.png"
+                        style="width:100%">
+                </div>
+
+                <div class="mySlides" id="slide2">
+                    <div class="numbertext">2 / 12</div>
+                    <img class="lbImg" src="./images/technoblade/gallery/Technotwit_waifu2x_2x_3n_png.png"
+                        style="width:100%">
+                </div>
+
+                <div class="mySlides" id="slide3">
+                    <div class="numbertext">3 / 12</div>
+                    <img class="lbImg" src="./images/technoblade/gallery/Technotwitch_waifu2x_2x_3n_png.png"
+                        style="width:100%">
+                </div>
+
+                <div class="mySlides" id="slide4">
+                    <div class="numbertext">4 / 12</div>
+                    <img class="lbImg" src="./images/technoblade/gallery/Technoface_waifu2x_2x_3n_png.png"
+                        style="width:100%">
+                </div>
+
+                <div class="mySlides" id="slide5">
+                    <div class="numbertext">5 / 12</div>
+                    <img class="lbImg" src="./images/technoblade/gallery/Floof_waifu2x_2x_3n_png.png"
+                        style="width:100%">
+                </div>
+
+                <div class="mySlides" id="slide6">
+                    <div class="numbertext">6 / 12</div>
+                    <img class="lbImg" src="./images/technoblade/gallery/Hot_elbow_waifu2x_2x_3n_png.png"
+                        style="width:100%">
+                </div>
+                <div class="mySlides" id="slide7">
+                    <div class="numbertext">7 / 12</div>
+                    <img class="lbImg" src="./images/technoblade/gallery/jump.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides" id="slide8">
+                    <div class="numbertext">8 / 12</div>
+                    <img class="lbImg" src="./images/technoblade/gallery/circle_waifu2x_2x_2n.gif" style="width:100%">
+                </div>
+
+                <div class="mySlides" id="slide9">
+                    <div class="numbertext">9 / 12</div>
+                    <img class="lbImg" src="./images/technoblade/gallery/in netherite.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides" id="slide10">
+                    <div class="numbertext">10 / 12</div>
+                    <img class="lbImg" src="./images/technoblade/gallery/llamas_waifu2x_2x_3n_jpg.png"
+                        style="width:100%">
+                </div>
+
+                <div class="mySlides" id="slide11">
+                    <div class="numbertext">11 / 12</div>
+                    <img class="lbImg" src="./images/technoblade/gallery/ransom.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides" id="slide12">
+                    <div class="numbertext">12 / 12</div>
+                    <img class="lbImg" src="./images/technoblade/gallery/sbi_waifu2x_2x_3n_jpg.png" style="width:100%">
+                </div>
+
+                <!-- Next/previous controls -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                <!-- Caption text -->
+                <div class="caption-container">
+                    <p id="caption2">nya</p>
+                </div>
+
+                <!-- Thumbnail image controls -->
+                <div class="column">
+                    <img class="demo" id="thumb1" src="./images/technoblade/gallery/thumbs/Technoblade.png"
+                        onclick="currentSlide(1)" alt="Technoblade's YouTube icon">
+                </div>
+
+                <div class="column">
+                    <img class="demo" id="thumb2" src="./images/technoblade/gallery/thumbs/Technotwit.png"
+                        onclick="currentSlide(2)" alt="Technoblade's Twitter icon">
+                </div>
+
+                <div class="column">
+                    <img class="demo" id="thumb3" src="./images/technoblade/gallery/thumbs/Technotwitch.png"
+                        onclick="currentSlide(3)" alt="Technoblade's Twitch icon">
+                </div>
+
+                <div class="column">
+                    <img class="demo" id="thumb4" src="./images/technoblade/gallery/thumbs/Technoface.png"
+                        onclick="currentSlide(4)" alt="Technoblade in real life">
+                </div>
+                <div class="column">
+                    <img class="demo" id="thumb5" src="./images/technoblade/gallery/thumbs/Floof.png"
+                        onclick="currentSlide(5)" alt="Technoblade's dog Floof">
+                </div>
+                <div class="column">
+                    <img class="demo" id="thumb6" src="./images/technoblade/gallery/thumbs/Hot_elbow.png"
+                        onclick="currentSlide(6)" alt="Elbow reveal">
+                </div>
+                <div class="column">
+                    <img class="demo" id="thumb7" src="./images/technoblade/gallery/thumbs/jump.png"
+                        onclick="currentSlide(7)" alt="Technoblade jumping">
+                </div>
+
+                <div class="column">
+                    <img class="demo" id="thumb8" src="./images/technoblade/gallery/thumbs/circle.png"
+                        onclick="currentSlide(8)" alt="Technoblade looking at camera">
+                </div>
+
+                <div class="column">
+                    <img class="demo" id="thumb9" src="./images/technoblade/gallery/thumbs/netherite.png"
+                        onclick="currentSlide(9)" alt="Technoblade in Netherite armour">
+                </div>
+
+                <div class="column">
+                    <img class="demo" id="thumb10" src="./images/technoblade/gallery/thumbs/llamas.png"
+                        onclick="currentSlide(10)" alt="Technoblade leading dozens of llamas">
+                </div>
+                <div class="column">
+                    <img class="demo" id="thumb11" src="./images/technoblade/gallery/thumbs/ransom.png"
+                        onclick="currentSlide(11)" alt="Technoblade, MICHAEL and Ranboo (back)">
+                </div>
+                <div class="column">
+                    <img class="demo" id="thumb12" src="./images/technoblade/gallery/thumbs/sbi.png"
+                        onclick="currentSlide(12)" alt="Sleepy Bois Inc">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--TRIVIA Modal-->
+
+
+    <div class="modal" id="trivia">
+        <div id="triviaModal" onclick="insideClick('triviaTask');">
+
+            <header class="aboutContainer">
+                <span onclick="document.getElementById('trivia').style.display='none'"
+                    class="minimizeAbt">&minus;</span>
+                <span class="vl"></span>
+                <span
+                    onclick="chooseOption(event, 'triviaChoose', 'homeTab'); document.getElementById('trivia').style.display='none'; closeTask('triviaTask')"
+                    class="closeAbt">&times;</span>
+                <div class="abtTitle"><strong> Technoblade Trivia</strong></div>
+            </header>
+
+            <div class="tabBar">
+                <button class="tablink barItem trivTabs" id="backHome"
+                    onclick="chooseOption(event, 'triviaChoose', 'homeTab')">&LessLess;</button>
+                <button class="tablink barItem trivTabs" id="homeTab"
+                    onclick="chooseOption(event, 'triviaChoose', 'homeTab')">Home</button>
+                <button class="tablink barItem trivTabs" id="devTab">Real Life</button>
+                <button class="tablink barItem trivTabs" id="alphaTab">Non DSMP</button>
+                <button class="tablink barItem trivTabs" id="gameTab">DSMP OOC</button>
+                <button class="tablink barItem trivTabs" id="miscTab">DSMP</button>
+            </div>
+
+            <div class="selectTrivia" id="triviaChoose">
+                <div class="triviaRow">
+                    <div class="triviaBox" id="triviaDevelopment"
+                        ondblclick="chooseOption(event, 'trivDevTab', 'devTab')">
+                        Real Life</div>
+                    <div class="triviaBox" id="triviaAlpha"
+                        ondblclick="chooseOption(event, 'trivAlphaTab', 'alphaTab')">Non DSMP
+                    </div>
+                </div>
+                <div class="triviaRow">
+
+                    <div class="triviaBox" id="triviaGame" ondblclick="chooseOption(event, 'trivGameTab', 'gameTab')">
+                        DSMP OOC</div>
+                    <div class="triviaBox" id="triviaMisc" ondblclick="chooseOption(event, 'trivMiscTab', 'miscTab')">
+                        DSMP</div>
+                </div>
+            </div>
+
+            <div class="selectTrivia" id="trivDevTab">
+                <h2>Real Life</h2>
+
+                <div>
+                    <p>
+                        &SmallCircle;Technoblade had ADHD.
+                    </p>
+                    <p>
+                        &SmallCircle;He was an English major, but dropped out of college in order to pursue a career in
+                        YouTube.
+                    </p>
+                    <p>
+                        &SmallCircle;Before creating the Technoblade channel, Technoblade had a channel called
+                        StudioLORE.
+                        An even
+                        older channel named Derp Squad has videos of him playing Minecraft with his brother.
+                    </p>
+                    <span class="trivSideImage wideTriv rightTriv"><img
+                            src="./images/technoblade/gallery/Hot_elbow_waifu2x_2x_3n_png.png" alt="Elbow reveal"
+                            height="150">
+                        <p class="imgdescription">Elbow reveal</p>
+                    </span>
+                    <p>
+                        &SmallCircle;Technoblade has done an unofficial face reveal and has shown his face on video
+                        multiple
+                        times, but
+                        many people think he has not ever shown his face before and still request for a face reveal.
+                        Instead of a face reveal, he did a long awaited elbow reveal at one million
+                        subscribers.
+                    </p>
+                </div>
+                <div>
+                    <p>&SmallCircle;He claimed that he is 25% Greek, although he never knew his grandmother on the Greek
+                        side.
+                    </p>
+
+                    <p>
+                        &SmallCircle;He has three younger sisters and a younger brother named Chris.
+                    </p>
+
+
+                    <p>
+                        &SmallCircle; Technoblade released a video of his sister playing Survival Games in 2014.
+
+                    </p>
+
+
+                    <span class="trivSideImage wideTriv leftTriv"><img src="./images/technoblade/ph1lza wedding.jpg"
+                            alt="Elbow reveal" height="150">
+                        <p class="imgdescription">Ph1lzas wedding</p>
+                    </span>
+                    <p>
+                        &SmallCircle;Technoblade is known for breaking the fourth wall to plug his channel during
+                        important
+                        events.
+                    </p>
+                    <p>
+                        &SmallCircle;According to Technoblade himself, he was an atheist.
+                    </p>
+                    <p>
+                        &SmallCircle;Technoblade was invited to Philza's wedding but didn't attend due to participating
+                        in
+                        MCC.
+                    </p>
+
+
+                </div>
+                <div>
+                    <span class="trivSideImage wideTriv rightTriv"><img src="./images/technoblade/gallery/sbi.jpg"
+                            alt="Elbow reveal" height="150">
+                        <p class="imgdescription">Sleepy Bois Inc</p>
+                    </span>
+                    <p>
+                        &SmallCircle;He was part of the group Sleepy Bois Inc with Phil, Wilbur, and Tommy. In the
+                        group,
+                        Technoblade was
+                        considered the "older brother" of the dynamic.
+                    </p>
+
+                    <p>
+                        &SmallCircle;His favorite color was blue.
+                    </p>
+                    <p>
+                        &SmallCircle;His favorite Pokémon was Beldum.
+                    </p>
+                    <p>
+                        &SmallCircle;Technoblade was diagnosed with cancer in his arm on August 2, 2021 and publicly
+                        revealed his
+                        diagnosis on August 27, 2021. He underwent surgery that removed almost all of his cancer in
+                        December 2021. On June 30, 2022, his family released a video announcing that he had passed away
+                        due to the cancer.
+                    </p>
+                    <p>
+                        &SmallCircle;As a response to the announcement, multiple content creators donated to cancer
+                        research
+                        based on
+                        their performance in MC Championship 16.
+                        Dream matched his team's points in dollars. His team finished in second place, earning 21,409
+                        points.
+                        Awesamdude and Skeppy agreed to match Dream's donation.
+                        F1NN5TER and TapL agreed to donate the same amount as they each earned individually in the
+                        event.
+                        Grian said on-stream that he would be donating as well.
+                        The Aqua Axolotls (Antfrost, Fundy, Tubbo, and 5up) donated $50 for every time they swore during
+                        the
+                        event. The team raised $1,200 for charity.
+                    </p>
+
+                    <p>
+                        &SmallCircle;Technoblade had 205 bones because one of his clavicles was removed during the
+                        surgery
+                        to remove his
+                        tumor.
+                    </p>
+                </div>
+                <div>
+                    &SmallCircle;Technoblade met Ph1LzA in person on October 19, 2021. He posted an image of Ph1LzA
+                    waving.
+                    Technoblade met Wilbur Soot in person on February 9, 2022. He posted a picture of Wilbur on Twitter
+                    with a description joking about Wilbur placing TNT under his house.
+                    </p>
+                </div>
+
+
+                <div>
+
+                    <p>
+                        &SmallCircle;When he was younger, Techno was taught basic sword and knife-fighting in a summer
+                        camp
+                        with foam
+                        weapons. He got disqualified from his summer camp’s dueling tournament because he would throw
+                        his
+                        knife high in the air at the start of his matches and stab his opponent while they were
+                        distracted
+                        watching the knife fall.
+                    </p>
+
+                    <p>
+                        &SmallCircle;Technoblade was the third-place winner of MrBeast's Hide And Seek Across The Earth!
+                        competition. He
+                        won a $5,000 refrigerator using a skin that camouflaged him with sand on the outer layer. He
+                        also
+                        released his own perspective of the competition in his video titled "I Must Win MrBeast's
+                        $10,000
+                        Refrigerator."
+                    </p>
+                    <p>
+                        &SmallCircle;Technoblade initially did not want to do the $100,000 Duel against Dream and found
+                        the
+                        idea
+                        terrible. He was pressured into doing it after Dream and MrBeast tweeted about the duel
+                        simultaneously.
+                    </p>
+                    <p>
+                        &SmallCircle;Technoblade reached ten million subscribers on YouTube on New Year's Eve 2021,
+                        completing a personal
+                        goal he had set for himself. To help achieve this goal, Technoblade paid for advertisement time
+                        on
+                        YouTube to call on viewers to
+                        subscribe to him
+                    </p>
+                    <p>
+                        &SmallCircle; In 2014, he wrote a Hypixel fanfiction called "Revolution - A Blitz Story" in the
+                        Hypixel
+                        forums, although all of his old forums posts are now deleted, including the fanfiction.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="selectTrivia" id="trivAlphaTab">
+                <h2>Minecraft outside of DSMP</h2>
+
+                <div>
+                    <div>
+                        <p>&SmallCircle;Technoblade was one of the players on SMPEarth and had history of fighting
+                            TommyInnit
+                            in wars on the
+                            server.
+
+                        </p>
+                        <span class="trivSideImage wideTriv rightTriv"><img src="./images/technoblade/potato king.png"
+                                alt="Potato King" height="150">
+                            <p class="imgdescription">Technoblade, the Potato King</p>
+                        </span>
+
+
+                        <p>&SmallCircle;On SMPEarth, Technoblade founded the Antarctic Empire in Antarctica,
+                            choosing
+                            Ph1LzA as
+                            his
+                            co-leader. The faction is known for being the only faction to successfully claim the
+                            entire
+                            world,
+                            and was one of the strongest on the server. The Antarctic Empire was frequently in
+                            conflict
+                            with
+                            Business Bay, the faction owned by TommyInnit.
+                        </p>
+                        <p>&SmallCircle;After the Great Potato War, Technoblade was put as an NPC in Hypixel
+                            Skyblock
+                            where
+                            players could
+                            purchase special items from him.
+                        </p>
+
+                    </div>
+                    <div>
+                        <p> &SmallCircle; In Technoblade's video "the quest for the [PIG] rank", he says that he
+                            created
+                            the channel for the sole purpose of being confident and getting 10 million subscribers.
+
+                        </p>
+                        <p>&SmallCircle; Technoblade came up with the idea to have a uniquely
+                            colored rank called the [PIG] rank. When he tweeted Hypixel how many subscribers he
+                            would
+                            need to acquire this rank, Hypixel responded with 10 million.
+                        </p>
+                        <span class="trivSideImage wideTriv leftTriv"><img src="./images/technoblade/pigrank.png"
+                                alt="Potato King" height="30">
+                            <p class="imgdescription">PIG+++ rank</p>
+                        </span>
+                        <p>
+                            This was apparently "all part of his master plan" and supposedly increased his
+                            motivation to
+                            tryhard his YouTube career even more than usual. Despite not having reached 10 million
+                            subscribers at the time, he still gained the [PIG], [PIG+], [PIG++], and [PIG+++] ranks
+                            after Hypixel donated in his Minecraft Monday stream, stating that he would get [PIG]
+                            rank
+                            if he'd win the tournament. Following that victory, another plus sign would be added to
+                            his
+                            rank with each extra win in the event. The [PIG+++……] later became a meme and an inside
+                            joke
+                            among his audience.
+                        </p>
+                    </div>
+                    <div>
+                        <span class="trivSideImage wideTriv rightTriv"><img src="./images/technoblade/Winstreak.webp"
+                                alt="Potato King" height="20">
+                            <p class="imgdescription">Win streak</p>
+                        </span>
+                        <p>
+                            &SmallCircle;In 2019, Technoblade participated in Keemstar's Minecraft event, Minecraft
+                            Mondays, where
+                            YouTubers and streamers would come together to play a wide variety of minigames, and the
+                            prize
+                            for winning was set as $10,000 dollars to be split between the first-place team, changed to
+                            $5,000 past week three. He won four times: week one, week two, week six, and week ten. He
+                            took
+                            part in the minigame-based event with other popular YouTubers and/or streamers including
+                            Skeppy,
+                            CaptainSparklez, Speedyw03, Vikkstar123, DanTDM, JeromeASF, jschlatt, MrBeast, Lachlan,
+                            PewDiePie, James Charles, Ninja, LazarBeam and more.
+                        </p>
+                        <p>
+                            &SmallCircle;He holds the record for the longest BedWars killstreak.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="selectTrivia" id="trivGameTab">
+                <h2>DSMP OOC</h2>
+                <div>
+                    
+                    <p>
+                        &SmallCircle; Technoblade once joked about his brother Chris being whitelisted on the Dream SMP
+                        and
+                        responded to
+                        his brother's messages on stream while joking a potential duel between his brother and Drista.
+                        After
+                        being asked about Chris's age, Techno joked that he didn't know Chris.
+
+                    </p>
+                    <p>
+                        &SmallCircle;Technoblade was one of the writers of the Dream SMP after Wilbur Soot stepped down.
+                        Techno
+                        specifically wrote the arc around his character.
+                    </p>
+
+                    <p>
+                        &SmallCircle;He had "leaked" a fake script on livestream as a joke directed at TommyInnit, who
+                        had
+                        done the same
+                        with an actual script.
+
+                    </p>
+                </div>
+
+                <div>
+                    <span class="trivSideImage wideTriv rightTriv"><img
+                        src="./images/technoblade/ph1lnoblade.avif" height="150"> <audio></audio>
+                    <p class="imgdescription">Phil and Techno</p>
+                </span>
+                
+
+                    <p>
+                        &SmallCircle; c!Technoblade is presumably in his late 20's, as stated by Wilbur, however at his
+                        birthday party
+                        he keep his age ambiguous.
+
+                    </p>
+                    <p>
+                        &SmallCircle; Although he and Technoblade are still "old friends," Philza has confirmed that the
+                        Antarctic
+                        Empire lore is NOT linked to the Dream SMP, and is only a headcanon.
+
+
+                    </p>
+                    <p>
+                        &SmallCircle; It was previously thought to be canon that his father was Philza. However, when
+                        asked on stream
+                        he clarified that he does not recognize the family canon, as it's "weird" and makes his
+                        backstabbing awkward. He has stated that he is fine with head-canons, but will not be acting out
+                        the family dynamics in the story, and it will not be a part of the plot.
+                        Phil has also agreed to this, and decanonized the family dynamic, saying that the "longtime
+                        friends" plot makes more sense storywise.
+
+                    </p>
+
+                    
+
+                </div>
+            </div>
+
+
+            <div class="selectTrivia" id="trivMiscTab">
+                <h2>DSMP</h2>
+                <div>
+                    <span class="trivSideImage wideTriv rightTriv"><img
+                            src="./images/technoblade/Baby_Zombie_with_Jack_o'Lantern.webp"
+                            alt="Zombie with Jack O'Lantern" height="150">
+                        <p class="imgdescription">Zombie with Jack O'Lantern</p>
+                    </span>
+                    <p>
+                        &SmallCircle; In one stream, he started "memorizing" the layout of the entire server (mostly the
+                        areas/terrain that has buildings and landmarks near them) and is called "The Human GPS of the
+                        server." This title used to be not fully correct, as he would often "spill his water" and use a
+                        transition screen to look at the coordinates of his intended location, but he has since stopped
+                        doing this and seems to actually have a good mental map of the layout of the server.
+                    </p>
+                    <p>
+                        &SmallCircle; Technoblade is the only known person to possess Jack 'o' Lantern wearing mobs on
+                        the server. He
+                        collected them during Halloween and seems to be proud of them.
+                    </p>
+                    <p>
+                        &SmallCircle; He canonized his chat, calling them the "voices in his head."
+                    </p>
+                </div>
+                <div>
+                    <span class="trivSideImage wideTriv leftTriv"><img src="./images/technoblade/withers.webp"
+                            alt="Subscribe to Technoblade" height="70">
+                        <p class="imgdescription">Wither name</p>
+                    </span>
+                    <p>
+                        &SmallCircle; During the battle against L'Manberg that occurred on November 16, he used one
+                        of
+                        the withers to
+                        self-promote by naming it "Subscribe to Technoblade" with a name tag. He stated that this
+                        was
+                        the most important part.
+                    </p>
+                    <p>
+                        &SmallCircle; He has, at one point, stated that his hatred of orphans began when his parents
+                        were brutally
+                        murdered by a group of orphans. This seems to be the most likely backstory for Technoblade.
+
+                    </p>
+                    <p>
+                        &SmallCircle; According to Ghostbur's book, Wilbur and Techno used to spar when they were
+                        kids.
+                    </p>
+                    <p>
+                        &SmallCircle; According to Technoblade, his second vault contained enough wither heads to
+                        create
+                        55
+                        withers.
+                    </p>
+                    <p>
+                        &SmallCircle; The Butcher Army has put up many posters as propaganda against Technoblade
+                        around
+                        the SMP, one
+                        of which depicts im_a_squid_kid winning the potato war. This seems to imply that the potato
+                        war,
+                        Hypixel Skyblock, and Squid Kid are all canon to the Dream SMP.
+                    </p>
+                </div>
+
+                <div>
+                    <span class="trivSideImage wideTriv rightTriv"><img
+                            src="./images/technoblade/Channel_Member_Bell.webp" alt="Bell" height="150">
+                        <p class="imgdescription">Sellout timer</p>
+                    </span>
+                    <p>
+                        &SmallCircle; It was said by Philza that he knew Techno since he was a kid, it might be implied
+                        that Philza
+                        might have been Techno's mentor.
+                    </p>
+                    <p>
+                        &SmallCircle; Techno in character can perfectly keep track of time, and so can keep track of
+                        when to ring his
+                        sellout timer.
+                    </p>
+                    <p>
+                        &SmallCircle; Along with training in his spare time, Techno has stated he enjoys playing golf.
+                    </p>
+                </div>
+            </div>
+
+
+            <footer class="aboutContainer">
+                <div class="abtTitle">&ThickSpace;</div>
+            </footer>
+
+        </div>
+    </div>
+
+    <script src="./js/neverdies.js"></script>
+    <script>
+        const element = document.getElementById("trivia");
+        element.addEventListener("click", myFunction);
+
+        function myFunction() {
+            switchTasks(2);
+        }
+    </script>
+
+
+
+</body>
+
+</html>

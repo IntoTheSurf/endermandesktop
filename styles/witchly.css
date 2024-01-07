@@ -1,0 +1,16 @@
+#cover {
+  background-image: linear-gradient(to right, rgba(144, 8, 255, 0.7), rgba(0, 51, 0, 0)), url("../images/bridges.png");
+  min-height: 300px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+.dircube {
+  background-color: rgb(76, 43, 107) !important;
+}
+
+.cellc{
+  background-color: rgb(126, 52, 52) !important;
+}

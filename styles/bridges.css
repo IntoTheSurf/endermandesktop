@@ -1,0 +1,302 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+#cover {
+    background-image: linear-gradient(to right, rgba(75, 160, 72, 0.7), rgba(0, 51, 0, 0)), url("../images/bridges.png");
+    min-height: 300px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+  }
+
+/*Instructions*/
+
+#directInstructions, #diagonalInstructions{
+    display: inline-block;
+    background-color: rgba(75, 160, 72, 0.7);
+    padding: 2vw;
+    margin: 0px 3vw;
+    margin-right: 3vw;
+    width: 93%;
+    position: relative;
+    vertical-align: middle;
+    line-height: 30px;
+    
+}
+.num{
+    background-color: rgb(206, 59, 59);
+    padding: 0.8vw;
+}
+
+.tipLine{
+    background-color: rgb(238, 176, 4);
+    box-shadow: 1pt;
+    width:100%;
+    bottom: auto;
+    margin: 0;
+    color: brown;
+    padding: 0.7vw;
+    line-height: 30px;
+}
+
+#tip{
+    background-color: rgb(206, 59, 59);
+    padding: 1vw;
+}
+
+#moreTips{
+    display: inline-block;
+    background-color: rgba(255, 136, 25, 0.87);
+    padding-left: 5vw;
+    padding-right: 5vw;
+    margin-top: 10pt;
+    margin-bottom: 10pt;
+    width: 100%;
+    position: relative;
+    vertical-align: middle;
+    line-height: 30px;
+}
+
+#dirbr{
+    margin-left: 30px;
+    margin-right: 30px;
+    padding-bottom: 30px;
+}
+
+/*Simulation buttons*/
+.buttonBar {
+    margin-top: 30px;
+    display: flex;
+    display: -webkit-flex;
+    background-color: rgb(155, 77, 77);
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: auto;
+    color: rgb(76, 0, 255);
+}
+
+.button {
+    display: inline-block;
+    font-size: 16px;
+    text-align: center;
+    color: brown !important;
+    background-color: rgb(194, 137, 137);
+    border: 2px rgb(19, 53, 77);
+    height: 28px;
+    padding: 2px;
+    margin: 1px;
+
+}
+
+/*Direct bridge simulator*/
+.directbridge {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    align-items: center;
+    -webkit-flex-direction: column;
+    min-height: 300px;
+    width: 100%;
+    background: linear-gradient(to right, rgba(58, 58, 58, 0.5), rgba(48, 48, 48, 0.466)),
+        url("../images/ground.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+#dirbrcube {
+    height: 15vw;
+    aspect-ratio: 1 / 1;
+    background-color: rgb(168, 32, 32);
+    border: 2px solid rgb(36, 31, 31);
+    padding: 10px;
+    margin: 10px;
+    transition: .5s linear;
+    animation: block-entry 1s ease-in;
+}
+
+#dirbrcubenext1 {
+    visibility: hidden;
+    height: 15vw;
+    aspect-ratio: 1 / 1;
+    background-color: rgb(168, 32, 32);
+    border: 2px solid rgb(36, 31, 31);
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+}
+
+#dirbrcubenext2 {
+    visibility: hidden;
+    height: 15vw;
+    aspect-ratio: 1 / 1;
+    background-color: rgb(168, 32, 32);
+    border: 2px solid rgb(36, 31, 31);
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+}
+
+#dirbrcubenext3 {
+    visibility: hidden;
+    height: 15vw;
+    aspect-ratio: 1 / 1;
+    background-color: rgb(168, 32, 32);
+    border: 2px solid rgb(36, 31, 31);
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+}
+
+@keyframes block-entry {
+    0% {
+        transform: rotateX(90deg);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: rotateX(0deg);
+        opacity: 1;
+    }
+}
+
+#dirbrcubenext4 {
+    visibility: hidden;
+    height: 15vw;
+    aspect-ratio: 1 / 1;
+    background-color: rgb(168, 32, 32);
+    border: 2px solid rgb(36, 31, 31);
+    transform-origin: center bottom;
+    transition: .5s linear;
+    animation: block-entry .5s ease-in;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+}
+
+#dirbrcubenext5 {
+    visibility: hidden;
+    height: 15vw;
+    aspect-ratio: 1 / 1;
+    background-color: rgb(168, 32, 32);
+    border: 2px solid rgb(36, 31, 31);
+    transform-origin: center bottom;
+    transition: .5s linear;
+    animation: block-entry .5s ease-in;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+}
+
+/*Diagonal bridge simulator*/
+.diabrcontainer {
+    margin: 30px;
+    background: linear-gradient(to right, rgba(58, 58, 58, 0.5), rgba(48, 48, 48, 0.466)),
+        url("../images/ground.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.trio {
+    padding-left: 15vw;
+    padding-right: 15vw;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.cell {
+    background: rgba(255, 99, 71, 0);
+    margin: 5px;
+    color: rgba(161, 19, 19, 0);
+    text-align: center;
+    flex: 1 0 auto;
+    aspect-ratio: 1 / 1;
+}
+
+
+#cellc1 {
+    visibility: visible;
+    background: rgb(45, 121, 151);
+    border: 2px solid rgb(19, 53, 77);
+    margin: 5px;
+    color: rgb(221, 21, 21) ! important;
+    text-align: center;
+    flex: 1 0 auto;
+    aspect-ratio: 1 / 1;
+}
+
+#cellc2 {
+    visibility: hidden;
+    background: rgb(45, 121, 151);
+    border: 2px solid rgb(19, 53, 77);
+    margin: 5px;
+    color: rgb(221, 21, 21) ! important;
+    text-align: center;
+    flex: 1 0 auto;
+    aspect-ratio: 1 / 1;
+}
+
+#cellc3 {
+    visibility: hidden;
+    background: rgb(45, 121, 151);
+    border: 2px solid rgb(19, 53, 77);
+    margin: 5px;
+    color: rgb(221, 21, 21) !important;
+    text-align: center;
+    flex: 1 0 auto;
+    aspect-ratio: 1 / 1;
+}
+
+#cellc4 {
+    visibility: hidden;
+    background: rgb(45, 121, 151);
+    border: 2px solid rgb(19, 53, 77);
+    margin: 5px;
+    color: rgb(221, 21, 21) !important;
+    text-align: center;
+    flex: 1 0 auto;
+    aspect-ratio: 1 / 1;
+}
+
+#cellc5 {
+    visibility: hidden;
+    background: rgb(45, 121, 151);
+    border: 2px solid rgb(19, 53, 77);
+    margin: 5px;
+    color: rgb(221, 21, 21) !important;
+    text-align: center;
+    flex: 1 0 auto;
+    aspect-ratio: 1 / 1;
+}
+
+#cellc6 {
+    visibility: hidden;
+    background: rgb(45, 121, 151);
+    border: 2px solid rgb(19, 53, 77);
+    margin: 5px;
+    color: rgb(221, 21, 21) !important;
+    text-align: center;
+    flex: 1 0 auto;
+    aspect-ratio: 1 / 1;
+}
+
+#cellc7 {
+    visibility: hidden;
+    background: rgb(45, 121, 151);
+    border: 2px solid rgb(19, 53, 77);
+    margin: 5px;
+    color: rgb(221, 21, 21) !important;
+    text-align: center;
+    flex: 1 0 auto;
+    aspect-ratio: 1 / 1;
+}
